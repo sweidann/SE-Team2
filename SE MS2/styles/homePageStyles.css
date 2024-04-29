@@ -1,0 +1,205 @@
+body {
+  height: 2000px;
+  margin: 0;
+  color: #333333;
+  font-family: Arial, sans-serif;
+
+  background-color: white;
+
+  background-image: radial-gradient(circle, white 2px, transparent 2px);
+
+  background-size: 20px 20px;
+  background-position: 50% 0;
+  background-repeat: repeat;
+}
+
+.upper-part {
+  height: 100vh;
+  background-color: #8e65c0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.dotted-part {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  width: 50%;
+  height: 100%;
+  background-color: #8e65c0;
+  background-image: radial-gradient(circle, white 1px, transparent 2px);
+
+  background-size: 40px 40px;
+  background-position: 50% 0;
+  background-repeat: repeat;
+}
+
+html,
+body {
+  scroll-behavior: smooth !important;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 15px;
+}
+
+.header-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 15vh;
+  z-index: 300;
+  justify-content: space-around;
+}
+
+.btns-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 35vw;
+  gap: 2vw;
+  z-index: 300;
+  margin-left: 8vw;
+}
+
+.login-div {
+  z-index: 200;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 10vw;
+  width: 18vw;
+}
+
+.login-btn-a {
+}
+
+.admin-btn-a {
+  padding: 10px;
+  border: 2px solid #00cab6;
+  background-color: #00cab6;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  color: white;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.admin-btn-a:hover {
+  scale: 1.05;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 20vw;
+  height: 10vh;
+}
+
+.welcome-part {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.slogan-part {
+  height: 100%;
+  width: 50vw;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.words-and-signup {
+  position: absolute;
+  padding-left: 3.5vw;
+  top: 18%;
+}
+
+.row1,
+.row2 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5vw;
+  font-size: 5em;
+  color: white;
+  font-weight: 700;
+}
+
+.sign-up-div {
+  width: 15vw;
+  height: 10vh;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7vh;
+  display: flex;
+}
+
+.sign-up-button {
+  height: 100%;
+  width: 100%;
+  border-radius: 7%;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  background-color: #00cab6;
+  border: 0px solid #00cab6;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.sign-up-button:hover {
+  scale: 1.1;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.picture-part {
+  height: 100%;
+  width: 50%;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.donor-img {
+  height: 100%;
+  position: absolute;
+  right: 10vw;
+}
+
+#about {
+  height: 900px;
+  border: 2px solid red;
+}
+
+#activities {
+  height: 900px;
+  border: 2px solid green;
+}
+
+#contact {
+  height: 900px;
+  border: 2px solid purple;
+}
