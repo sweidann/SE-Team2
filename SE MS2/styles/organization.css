@@ -23,7 +23,7 @@ body {
 }
 
 .button-row img {
-  margin-right: 8px;
+  margin-left: 8px;
   height: 35px;
   width: 35px;
   vertical-align: middle;
@@ -32,6 +32,7 @@ body {
 .button-row button {
   margin-bottom: 5px;
   height: 50px;
+  width: 150px;
   background-color: transparent;
   border-color: transparent;
   color: white;
@@ -140,8 +141,8 @@ body {
 
 .organization-details {
   position: fixed;
-  top: 85%;
-  left: 3%;
+  top: 88%;
+  left: 0%;
   bottom: 0px;
   color: white;
 }
@@ -149,6 +150,7 @@ body {
 .org {
   border-color: transparent;
   font-weight: bold;
+  vertical-align: middle;
 }
 
 .org img {
@@ -176,7 +178,7 @@ body {
 }
 
 .post {
-  min-height: 100px;
+  min-height: 150px;
   max-height: 200px;
   background-color: #ac86da;
   color: white;
@@ -236,7 +238,7 @@ body {
  background-color: #8e65c0;
 }
 
-.post-window textarea {
+/* .post-window textarea {
   position: relative;
   left:5%;
   top: 15%;
@@ -251,4 +253,87 @@ body {
   word-break: break-all;
   color: white;
   overflow: visible;
+} */
+
+.post-window select {
+  position: relative;
+  left:5%;
+  top: 15%;
+  resize: none;
+  width: 80px;
+  height: 50px;
+  border: none;
+  border-bottom: 2px solid #d9d9d9;
+  background-color: #8e65c0;
+  outline: none;
+  color: white;
+  font-size: small;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.notifications {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 76%;
+  bottom: 0%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: #ac86da;
+  color: white;
+  font-size: large;
+  height: 225px;
+  width: 275px;
+  overflow-y: auto;
+  border: none;
+  border-top: 3px solid #d9d9d9;
+  align-items: start;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.notification p {
+  font-size: medium;
+}
+
+.notification button {
+  position: relative;
+  width: 85px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  border-radius: 15px;
+  left: 10%;
+  color: white;
+}
+
+.notification button:hover {
+  background-color: #8e65c0;
+}
+
+.notification img {
+  position: relative;
+  left: 5%;
+  width: 10px;
+  height: 10px;
+  transition: background-color 0.3s;
+}
+
+.notification img:hover {
+  background-color: #8e65c0;
+ }
+
+ .notifications::-webkit-scrollbar {
+  width: 5px;
+}
+
+.notifications::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  border-radius: 5px;
+}
+
+.notifications::-webkit-scrollbar-track {
+  background-color: #d9d9d9;
+  border-radius: 5px;
 }
