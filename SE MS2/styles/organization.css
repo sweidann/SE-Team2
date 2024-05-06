@@ -218,7 +218,7 @@ body {
 
 .post-window .post-button {
   width: 80px;
-  bottom: 5%;
+  bottom: 3%;
   right: 5%;
   position: absolute;
 }
@@ -236,15 +236,19 @@ body {
  background-color: #8e65c0;
 }
 
-/* .popup input[type="text"] {
-  position: absolute;
-  top: 5%;
+.post-window textarea {
+  position: relative;
   left:5%;
-  padding: 5px;
+  top: 15%;
+  resize: none;
+  width: 530px !important;
+  height: 250px !important;
   border: none;
   border-bottom: 2px solid #d9d9d9;
   background-color: transparent;
   outline: none;
   white-space: normal;
-  word-break: break-word;
-} */
+  word-break: break-all;
+  color: white;
+  overflow: visible;
+}

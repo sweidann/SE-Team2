@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const buttonsRows = document.querySelectorAll(".button-row");
     const postButton = document.querySelector(".post-button");
     const postNow = document.getElementById("postnow");
-    const popup = document.getElementById("postpopup");
     const xbutt = document.getElementById("closepop");
 
     buttonsRows.forEach(buttonRow => {
@@ -14,6 +13,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 case "home":
                     window.location.href = "hompage.html";
                     break;
+                case "documents":
+                    document.getElementById("postsarea").style.display = "none";
+                    //show documents upload area
+                    break;
+                case "location":
+                    document.getElementById("postsarea").style.display = "none";
+                    //show location area
+                    break;
+                case "pickup time":
+                    document.getElementById("postsarea").style.display = "none";
+                    //show pickup time 
+                    break;
+                case "fulfilled":
+                    document.getElementById("postsarea").style.display = "none";
+                    //show fulfilled
+                    break;
                 default:
                     console.log("Button action not defined");
             }
@@ -21,16 +36,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     postButton.addEventListener("click",function(){
-        popup.style.display = "block";
+        document.getElementById("postpopup").style.display = "block";
     });
 
     postNow.addEventListener("click",function(){
-        popup.style.display = "none";
+        // add post to posts
+        document.getElementById("postpopup").style.display = "none";
     });
 
     xbutt.addEventListener("click",function(){
-        popup.style.display = "none";
+        document.getElementById("postpopup").style.display = "none";
     });
 
+    //volunteer when clicked on info
+
+    //org when clicked on
 
 });
