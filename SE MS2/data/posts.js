@@ -2,6 +2,7 @@ export const clothesPosts = [
   {
     id: "1",
     Name: "white tshirt",
+    Color: "any",
     Organization: "Resala",
     Category: "clothes",
     image: "media/clothes/white-tshirt.jpg",
@@ -10,11 +11,12 @@ export const clothesPosts = [
     Gender: "female",
     Season: "summer",
     Material: "cotton",
-    Amount: 300,
+    Amount: 100,
   },
   {
     id: "2",
     Name: "white tshirt",
+    Color: "any",
     Organization: "Resala",
     Category: "clothes",
     image: "media/clothes/white-tshirt.jpg",
@@ -23,11 +25,12 @@ export const clothesPosts = [
     Gender: "female",
     Season: "summer",
     Material: "cotton",
-    Amount: 300,
+    Amount: 3,
   },
   {
     id: "3",
     Name: "Black Leather Jacket",
+    Color: "any",
     Organization: "FashionHub",
     Category: "clothes",
     image: "media/clothes/black_leather_jacket.jpg",
@@ -36,11 +39,12 @@ export const clothesPosts = [
     Gender: "male",
     Season: "winter",
     Material: "leather",
-    Amount: 500,
+    Amount: 5,
   },
   {
     id: "4",
     Name: "Silk Red Dress",
+    Color: "any",
     Organization: "SilkStreet",
     Category: "clothes",
     image: "media/clothes/silk_red_dress.jpg",
@@ -49,11 +53,12 @@ export const clothesPosts = [
     Gender: "female",
     Season: "spring",
     Material: "silk",
-    Amount: 600,
+    Amount: 8,
   },
   {
     id: "5",
     Name: "Gray Suit",
+    Color: "any",
     Organization: "SuitsElite",
     Category: "clothes",
     image: "media/clothes/gray_suit.jpg",
@@ -62,11 +67,12 @@ export const clothesPosts = [
     Gender: "male",
     Season: "all",
     Material: "wool",
-    Amount: 800,
+    Amount: 7,
   },
   {
     id: "6",
     Name: "Summer Floral Skirt",
+    Color: "any",
     Organization: "SummerWear",
     Category: "clothes",
     image: "media/clothes/summer_floral_skirt.jpg",
@@ -75,11 +81,12 @@ export const clothesPosts = [
     Gender: "female",
     Season: "summer",
     Material: "polyester",
-    Amount: 200,
+    Amount: 3,
   },
   {
     id: "7",
     Name: "Polo Shirt",
+    Color: "any",
     Organization: "CasualTrend",
     Category: "clothes",
     image: "media/clothes/polo_shirt.jpg",
@@ -88,11 +95,12 @@ export const clothesPosts = [
     Gender: "male",
     Season: "summer",
     Material: "cotton",
-    Amount: 120,
+    Amount: 1,
   },
   {
     id: "8",
     Name: "Running Sneakers",
+    Color: "any",
     Organization: "RunFast",
     Category: "clothes",
     image: "media/clothes/running_sneakers.jpg",
@@ -101,11 +109,12 @@ export const clothesPosts = [
     Gender: "unisex",
     Season: "all",
     Material: "synthetic",
-    Amount: 150,
+    Amount: 0,
   },
   {
     id: "9",
     Name: "Woolen Cap",
+    Color: "any",
     Organization: "WinterEssentials",
     Category: "clothes",
     image: "media/clothes/woolen_cap.jpg",
@@ -114,11 +123,12 @@ export const clothesPosts = [
     Gender: "unisex",
     Season: "winter",
     Material: "wool",
-    Amount: 50,
+    Amount: 2,
   },
   {
     id: "10",
     Name: "Evening Gown",
+    Color: "any",
     Organization: "GlamourDresses",
     Category: "clothes",
     image: "media/clothes/evening_gown.jpg",
@@ -127,7 +137,7 @@ export const clothesPosts = [
     Gender: "female",
     Season: "all",
     Material: "satin",
-    Amount: 700,
+    Amount: 2,
   },
 ];
 
@@ -140,7 +150,7 @@ export const toysPosts = [
     Gender: "unisex",
     Category: "Electronic toys",
     image: "media/toys/car.jpg",
-    Amount: 300,
+    Amount: 5,
   },
   {
     id: "2",
@@ -150,7 +160,7 @@ export const toysPosts = [
     Gender: "unisex",
     Category: "Electronic toys",
     image: "media/toys/train_set.jpg",
-    Amount: 200,
+    Amount: 4,
   },
   {
     id: "3",
@@ -160,7 +170,7 @@ export const toysPosts = [
     Gender: "unisex",
     Category: "Electronic toys",
     image: "media/toys/robot.jpg",
-    Amount: 150,
+    Amount: 9,
   },
   {
     id: "4",
@@ -170,7 +180,7 @@ export const toysPosts = [
     Gender: "unisex",
     Category: "Electronic toys",
     image: "media/toys/helicopter.jpg",
-    Amount: 250,
+    Amount: 10,
   },
   {
     id: "5",
@@ -180,7 +190,7 @@ export const toysPosts = [
     Gender: "unisex",
     Category: "Electronic toys",
     image: "media/toys/drone.jpg",
-    Amount: 350,
+    Amount: 10,
   },
   {
     id: "6",
@@ -190,7 +200,7 @@ export const toysPosts = [
     Gender: "unisex",
     Category: "Electronic toys",
     image: "media/toys/boat.jpg",
-    Amount: 180,
+    Amount: 2,
   },
   {
     id: "7",
@@ -200,7 +210,7 @@ export const toysPosts = [
     Gender: "unisex",
     Category: "Electronic toys",
     image: "media/toys/racing_track.jpg",
-    Amount: 220,
+    Amount: 8,
   },
   {
     id: "8",
@@ -210,7 +220,7 @@ export const toysPosts = [
     Gender: "unisex",
     Category: "Educational toys",
     image: "media/toys/interactive_globe.jpg",
-    Amount: 120,
+    Amount: 3,
   },
   {
     id: "9",
@@ -220,7 +230,7 @@ export const toysPosts = [
     Gender: "unisex",
     Category: "Educational toys",
     image: "media/toys/building_blocks.jpg",
-    Amount: 90,
+    Amount: 11,
   },
   {
     id: "10",
@@ -230,18 +240,60 @@ export const toysPosts = [
     Gender: "unisex",
     Category: "Electronic toys",
     image: "media/toys/teddy_bear.jpg",
-    Amount: 150,
+    Amount: 1,
   },
 ];
 
 export const foodPosts = [
   {
     id: "1",
-    type: "vegteble",
-    name: "carrot",
+    Type: "vegetables",
+    Name: "carrot",
     image: "media/food/",
     Organization: "Mcdonalds",
-    amount: 20,
+    Amount: 4,
+  },
+
+  {
+    id: "2",
+    Type: "vegetables",
+    Name: "carrot",
+    image: "media/food/",
+    Organization: "Mcdonalds",
+    Amount: 4,
+  },
+  {
+    id: "3",
+    Type: "vegetables",
+    Name: "carrot",
+    image: "media/food/",
+    Organization: "Mcdonalds",
+    Amount: 4,
+  },
+  {
+    id: "4",
+    Type: "vegetables",
+    Name: "carrot",
+    image: "media/food/",
+    Organization: "Mcdonalds",
+    Amount: 4,
+  },
+  {
+    id: "5",
+    Type: "vegetables",
+    Name: "carrot",
+    image: "media/food/",
+    Organization: "Mcdonalds",
+    Amount: 4,
+  },
+
+  {
+    id: "6",
+    Type: "vegetables",
+    Name: "carrot",
+    image: "media/food/",
+    Organization: "Mcdonalds",
+    Amount: 4,
   },
 ];
 
@@ -249,10 +301,10 @@ export const medicalPosts = [
   {
     id: "1",
     deviceType: "heart beat detector",
-    Use: "checking",
+    Usage: "checking",
     image: "media/medical-supplies",
     Organization: "Gaweya",
-    amount: 5,
+    Amount: 5,
   },
 ];
 
@@ -260,9 +312,9 @@ export const stationaryPosts = [
   {
     id: "1",
     Type: "sharpner",
-    Amount: 5,
     image: "media/stationary/",
     Organization: "Nefertari",
+    Amount: 8,
   },
 ];
 
@@ -270,12 +322,14 @@ export const bookPosts = [
   {
     id: "1",
     Name: "McBeath",
-    Author: "Shakespear",
+    Author: "Wiliam Shakespear",
     Language: "English",
     Edition: "4th Edition",
     image: "media/books/",
-    Summary: "Talks about a girl",
+    Summary:
+      "'McBeth' by William Shakespeare is a tragic play about the rise and fall of the titular character, a Scottish general who, driven by ambition and spurred on by prophecy and his manipulative wife, murders King Duncan to take the throne. His reign is consumed by guilt and paranoia, leading to further bloodshed and ultimately his downfall.",
     Organization: "Nefertari",
+    Amount: 9,
   },
 ];
 
@@ -290,5 +344,6 @@ export const bloodPosts = [
     hospitalGovernorate: "Cairo",
     hospitalAddress: "El-Hegaz Street",
     Organization: "Shefa",
+    Amount: 7,
   },
 ];

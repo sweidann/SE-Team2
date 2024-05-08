@@ -2,11 +2,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
   flex-direction: column;
   background-color: #e9e7e7;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+html {
+  overflow-y: scroll;
 }
 
 button {
@@ -175,6 +180,7 @@ input[type="checkbox"]:checked {
   gap: 2vh;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 .post-div {
@@ -185,10 +191,12 @@ input[type="checkbox"]:checked {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  gap: 2vw;
+  padding: 0px 10px;
 }
 
 .post-pic-div {
-  width: 30%;
+  width: 35%;
   height: 90%;
   overflow: hidden;
   border-radius: 20px;
@@ -202,7 +210,7 @@ input[type="checkbox"]:checked {
 
 .details-div {
   display: flex;
-  width: 65%;
+  width: 100%;
   height: 90%;
   flex-direction: column;
 }
@@ -229,8 +237,11 @@ input[type="checkbox"]:checked {
   gap: 10px;
 }
 
-.details-button {
+.details-button,
+.details-stationary,
+.details-books {
   width: 26%;
+  max-width: 10.5vw;
   height: 60%;
   border-radius: 50px;
   color: #8e65c0;
@@ -242,43 +253,158 @@ input[type="checkbox"]:checked {
   border-style: solid;
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+.modal,
+#donateModal {
+  display: none;
+  position: fixed;
+  z-index: 100;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+.modal-content,
+.modal-donate-content {
+  background-color: #ac86da;
+  margin: 10% auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  border: 2px solid white;
+  border-radius: 20px;
+  width: 40%;
+  color: white;
+}
+
+.modal-donate-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.inside-thank-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 7vh;
+  font-size: 2em;
+}
+
+.upper-inside-thank {
+  width: 100%;
+}
+
+.continue-button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+}
+
+.continue-button {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background-color: #00cab6;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.5em;
+  padding: 3vh 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#numberSelect,
+#numberSelect:focus {
+  width: 10%;
+  height: auto;
+  max-height: 50vh;
+  border-radius: 20px;
+  overflow-y: scroll;
+  border-color: #ac86da;
+  font-size: 1em;
+  color: #8e65c0;
+}
+
+.quantity-div {
+  font-size: 1.4em;
+  font-weight: bold;
+  padding-top: 0.5vh;
+}
+
+.inside-donate-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.upper-inside-donate {
+  display: flex;
+}
+
+.close-button-div {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: baseline;
+}
+
+.confirm-button-div {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
+  flex-direction: row;
+  height: 5vh;
+}
+
+.confirm-button {
+  width: 17%;
+  height: 100%;
+  border-radius: 50px;
+  background-color: #00cab6;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+}
+
+h2 {
+  font-weight: bold;
 }
 
 .close-button {
-  color: #aaa;
+  color: white;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 
+.close-button-donate {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  display: flex;
+  justify-content: end;
+}
+
 .close-button:hover,
-.close-button:focus {
-  color: black;
+.close-button-donate:hover,
+.close-button:focus,
+.close-button-donate:focus {
   text-decoration: none;
   cursor: pointer;
 }
 
 .donate-button {
   width: 17%;
+  max-width: 7vw;
   height: 60%;
   border-radius: 50px;
   background-color: #00cab6;
