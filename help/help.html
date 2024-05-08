@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details Popup</title>
+    <link rel="stylesheet" href="help.css" />
+  </head>
+  <body>
+    <div class="post-div" data-post-id="${post.id}">
+      <div class="post-pic-div">
+        <img
+          src="../${post.image}"
+          alt=""
+          class="product-pic"
+        />
+      </div>
+      <div class="details-div">
+        <div class="item-name">${post.bloodType} ${post.RHType}</div>
+        <div class="org-posting">${post.Organization}</div>
+        <div class="buttons-div">
+          <button class="details-button">View Details</button>
+          <div id="productModal" class="modal">
+            <div class="modal-content">
+              <span class="close-button">×</span>
+              <h2>Product Details</h2>
+              <div class="productDetails"></div>
+            </div>
+          </div>
+          <button class="donate-button">Donate</button>
+          <div class="donate-modal" id="donateModal-${post.id}" class="modal">
+          <div class="donate-modal-content">
+          <label for="quantity">Quantity:</label>
+          <select name="quantity" id="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <!-- Add more options as needed -->
+          </select>
+          <button class = "confirm-button" type="submit">Confirm Donation</button>
+        </div>
+      </div>
+      </div>
+
+    <script src="help.js"></script>
+  </body>
+</html>
