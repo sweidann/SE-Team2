@@ -15,6 +15,7 @@ function handleUploadButtonClick() {
             if (!selectedFiles.some(selectedFile => selectedFile.name === file.name)) {
             
                 selectedFiles.push(file);
+                alert("FIle Uploaded")
             }
         });
         
