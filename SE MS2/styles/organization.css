@@ -174,7 +174,7 @@ body {
   color: white;
   text-align: center;
   font-weight: bold;
-  max-height: 100%;
+  height: 100%;
 }
 
 .post {
@@ -270,6 +270,125 @@ body {
   font-size: small;
   font-weight: bold;
   border-radius: 15px;
+}
+
+.post-window textarea {
+  position: relative;
+  left: 5%;
+  top: 20%;
+  resize: none;
+  width: 80px;
+  height: 44px;
+  border: none;
+  border-bottom: 2px solid #d9d9d9;
+  background-color: #8e65c0;
+  outline: none;
+  color: white;
+  font-size: small;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+#name,#Toytype,#Medicaluse,#hospitalName{
+  width: calc(100% - 40%);
+}
+
+#amount,#Patientname,#bloodtype,#RHtype,#hospitalArea,#hospitalGov,#hospitalAdd {
+  width: calc(100% - 80%);
+}
+
+#name::placeholder,
+#amount::placeholder,
+#Toytype::placeholder,
+#Medicaluse::placeholder,
+#Patientname::placeholder,
+#bloodtype::placeholder,
+#RHtype::placeholder,
+#hospitalName::placeholder,
+#hospitalGov::placeholder,
+#hospitalAdd::placeholder,
+#hospitalArea::placeholder {
+  color: white;
+}
+
+#name::-webkit-scrollbar,
+#amount::-webkit-scrollbar,
+#Toytype::-webkit-scrollbar,
+#Medicaluse::-webkit-scrollbar,
+#Patientname::-webkit-scrollbar,
+#bloodtype::-webkit-scrollbar,
+#RHtype::-webkit-scrollbar,
+#hospitalName::-webkit-scrollbar,
+#hospitalGov::-webkit-scrollbar,
+#hospitalAdd::-webkit-scrollbar,
+#hospitalArea::-webkit-scrollbar {
+  width: 5px;
+}
+
+#name::-webkit-scrollbar-thumb,
+#amount::-webkit-scrollbar-thumb,
+#Toytype::-webkit-scrollbar-thumb,
+#Medicaluse::-webkit-scrollbar-thumb,
+#Patientname::-webkit-scrollbar-thumb,
+#bloodtype::-webkit-scrollbar-thumb,
+#RHtype::-webkit-scrollbar-thumb,
+#hospitalName::-webkit-scrollbar-thumb,
+#hospitalGov::-webkit-scrollbar-thumb,
+#hospitalAdd::-webkit-scrollbar-thumb,
+#hospitalArea::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  border-radius: 5px;
+}
+
+#name::-webkit-scrollbar-track,
+#amount::-webkit-scrollbar-track,
+#Toytype::-webkit-scrollbar-track,
+#Medicaluse::-webkit-scrollbar-track,
+#Patientname::-webkit-scrollbar-track,
+#bloodtype::-webkit-scrollbar-track,
+#RHtype::-webkit-scrollbar-track,
+#hospitalName::-webkit-scrollbar-track,
+#hospitalGov::-webkit-scrollbar-track,
+#hospitalAdd::-webkit-scrollbar-track,
+#hospitalArea::-webkit-scrollbar-track {
+  background-color: #d9d9d9;
+  border-radius: 5px;
+}
+
+.file-upload-container {
+  position: relative;
+  left: 5%;
+  top: 25%;
+  width: 80px;
+  height: 50px;
+  border: none;
+  border-bottom: 2px solid #d9d9d9;
+  background-color: #8e65c0;
+  color: white;
+  font-size: small;
+  font-weight: bold;
+  border-radius: 15px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.file-upload-container input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-upload-container label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 50px; /* Vertical centering */
+  text-align: center;
+  cursor: pointer;
 }
 
 .notifications {
