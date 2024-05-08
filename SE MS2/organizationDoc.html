@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Heavenly</title>
+    <link rel="stylesheet" type="text/css" href="styles/organization.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="logo">
+      <img src="media/logo2.png" alt="Logo" />
+    </div>
+    <div class="logo">
+      <img src="media/logo2.png" alt="Logo" />
+    </div>
+    <div class="button-list">
+      <div class="button-row">
+        <img src="media/home icon.png" alt="Home Icon" />
+        <button>Home</button>
+      </div>
+      <div class="button-row">
+        <img src="media/upload icon.png" alt="Documents Icon" />
+        <button>Documents</button>
+      </div>
+      <div class="button-row">
+        <img src="media/loc icon.png" alt="Location Icon" />
+        <button>Location</button>
+      </div>
+      <div class="button-row">
+        <img src="media/timer icon.png" alt="Pickup Icon" />
+        <button>Pickup Time</button>
+      </div>
+      <div class="button-row">
+        <img src="media/checkmark icon.png" alt="Fulfilled Icon" />
+        <button>Fulfilled</button>
+      </div>
+      <div class="post-button">
+        <button>Post</button>
+      </div>
+    </div>
+    <div class="vertical-line"></div>
+    <div class="vertical-line2"></div>
+    <div class="volunteers-list">
+      Volunteers
+      <div class="volunteer">
+        <img src="media/donor.png" onerror="applyDefaultStyle(this)" />
+        Mostafa Ashraf
+      </div>
+      <div class="volunteer">
+        <img src="media/volunteer icon.png" onerror="applyDefaultStyle(this)" />
+        Mohammed Sweidan
+      </div>
+      <div class="volunteer">
+        <img src="media/donor.png" onerror="applyDefaultStyle(this)" />
+        Ali Maghawry
+      </div>
+      <div class="volunteer">
+        <img src="media/volunteer icon.png" onerror="applyDefaultStyle(this)" />
+        Ahmed Safwat
+      </div>
+      <div class="volunteer">
+        <img src="media/donor.png" onerror="applyDefaultStyle(this)" />
+        Abdelrahman Mokhtar
+      </div>
+      <div class="volunteer">
+        <img src="media/volunteer icon.png" onerror="applyDefaultStyle(this)" />
+        Farah Hisham
+      </div>
+    </div>
+
+    <div class="Documents">Documents</div>
+
+    <div class="box">
+      <div class="container">
+        <div class="button-text">
+          <p class="text">Enter Employement Contract:</p>
+          <button
+            class="button"
+            onclick="handleUploadButtonClick()"
+            onerror="applyDefaultStyle(this)"
+          >
+            Upload File
+          </button>
+        </div>
+        <div class="button-text">
+          <p class="text">ID Badge:</p>
+          <button
+            class="button"
+            onclick="handleUploadButtonClick()"
+            onerror="applyDefaultStyle(this)"
+          >
+            Upload File
+          </button>
+        </div>
+        <div class="button-text">
+          <p class="text">Incorporation Certificate</p>
+          <button
+            class="button"
+            onclick="handleUploadButtonClick()"
+            onerror="applyDefaultStyle(this)"
+          >
+            Upload File
+          </button>
+          <input type="file" id="fileInput" style="display: none" />
+        </div>
+
+        <div class="button-text">
+          <p class="text">Tax Exemption Certificate</p>
+          <button
+            class="button"
+            onclick="handleUploadButtonClick()"
+            onerror="applyDefaultStyle(this)"
+          >
+            Upload File
+          </button>
+        </div>
+        <div class="button-text">
+          <p class="text">Business License</p>
+
+          <button
+            class="button"
+            onclick="handleUploadButtonClick()"
+            onerror="applyDefaultStyle(this)"
+          >
+            Upload File
+          </button>
+          <input type="file" id="fileInput" />
+        </div>
+        <div
+          class="post-button"
+          id="submitButton"
+          onclick="handleSubmitButtonClick()"
+        >
+          Submit
+        </div>
+      </div>
+      <p id="statusMessage" class="status-message"></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
