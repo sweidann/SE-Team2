@@ -15,11 +15,15 @@
       <div class="title-text">Teacher's Form</div>
       <div class="logo-div"> <img class = "logo-img" src="../media/logo2.png" alt="logo"></div>
     </div>
-    <form class="form">
-      <div class="form-group">
-        <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required placeholder="Enter full name">
-    </div>
+    <form class="form" id="myForm">
+      
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required placeholder="Enter first name">
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required placeholder="Enter last name">
+  </div>
+  
     <div class="info">You can teach pro-bono classes OR teach private tutoring</div>
     <div class="number-group">
       <label for="numberInput">Number of Pro-Bono Classes:</label>
@@ -43,6 +47,7 @@
       <button type="submit" class="submit">Submit</button>
       <button type="button" class="already-button">I already volunteered as a teacher before</button>
     </form>
-    <script src="../javaScript/teacher.js"></script>
+    <div id="error-message"></div>
+    <script type="module" src="../javaScript/teacher.js"></script>
   </body>
 </html>
