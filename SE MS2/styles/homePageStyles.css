@@ -199,7 +199,7 @@ a:hover {
 
 #about {
   height: 100vh;
-  border: 2px solid red;
+  
 }
 
 #activities {
@@ -313,4 +313,81 @@ textarea:focus {
   border: 1px solid white;
   transition: background-color 0.5s;
   cursor: pointer;
+}
+.middle-part {
+  height: 100vh;
+  background-color: #8e65c0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+ 
+}
+.dotted-middle {
+  z-index: 1;
+  position: absolute;
+  right: 50%;
+  bottom: 0%;
+  width: 50%;
+  height: 100%;
+  background-color: #8e65c0;
+  background-image: radial-gradient(circle, white 1px, transparent 2px);
+
+  background-size: 40px 40px;
+  background-position: 50% 0;
+  background-repeat: repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+.donators-img{
+  position: absolute;
+  top:2vh;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.food-img{
+  position: absolute;
+  top:35vh;
+  left:20vh;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.teaching-img{
+  height:200px;
+  width:300px;
+  position: absolute;
+  top:65vh;
+  left:60vh;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.info-text{
+  position: absolute;
+  left:50%;
+  bottom:0;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: center;
+}
+.title-abt{
+  position: absolute;
+  z-index: 1;
+  font-size: 2.5em;
+  top:5vh;
+  right:30vh;
+  font-weight: lighter;
+  color: aliceblue;
+}
+.description{
+  position: absolute;
+  z-index: 1;
+  right:0%;
+  text-align: right; /* Align text to the right */
+  color: aliceblue; /* Set text color to alicewhite */
+  line-height: 1.5;
+  font-weight: lighter;
+}
+h2{
+  line-height: 3em;
 }

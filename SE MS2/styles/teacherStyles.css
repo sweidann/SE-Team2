@@ -1,0 +1,208 @@
+body {
+    height: 2000px;
+    margin: 0;
+    color: #333333;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
+    background-image: radial-gradient(circle, white 2px, transparent 2px);
+    background-size: 20px 20px;
+    background-position: 50% 0;
+    background-repeat: repeat;
+    overflow: hidden;
+  }
+  
+  .title{
+    position: relative;
+    height: 5%;
+    width :100%;
+    background-color: blueviolet;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    flex-direction: row;
+   
+  }
+  .logo-div{
+    margin-left: auto;
+  }
+  .logo-img{
+    width: 20vw;
+    height: 16vh;
+    padding-top: 2vh;
+    right: 0px;
+
+  }
+  .back-button{
+    position: absolute; /* Position the button absolutely */
+    top: 20px; /* Adjust the distance from the top */
+    left: 50px;
+    height: 50px;
+    width: 50px;
+    font-size: 10px;
+    border-radius: 50px;
+    background-color: #00cab6;
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    color: aliceblue;
+    left: 0%;
+   cursor: pointer;
+  }
+  .back-button:hover {
+    scale: 1.1;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  }
+  .title-text {
+    margin: auto;
+    position: relative;
+    left:20%;
+  }
+  .homeback-button{
+    width: 12vw;
+    height: 8vh;
+    background-color: #00cab6;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+  
+  .homeback-button:hover {
+    scale: 1.1;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  }
+  .form{
+    position: relative ;
+    height: 95%;
+    width: 100%;
+    
+    background-color:  #ba9cde;
+  }
+  .styled-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .form-group {
+    margin-bottom: 30px;
+    margin-left: 5px;
+  }
+  .number-group{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    font-size: 0.9em;
+    margin-left: 5px;
+  }
+  .info{
+    font-size: 1.3em;
+    color:  #017f73;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-left: 5px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: aliceblue;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 20%;
+    padding: 10px;
+    border: 1px solid #c6bac7;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    margin-top: 5px;
+    background-color: #ecd9ec;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+ .upload-file {
+    display: none; /* Hide the default file input button */
+  }
+  
+  .custom-file-input {
+    position: relative;
+  }
+  
+  .file-label {
+    display: inline-block;
+    padding: 10px;
+    background-color: #89c2e7;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 2em;
+    text-align: top;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+
+  }
+  .file-label:hover {
+    scale: 1.1;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  }
+  .upload-icon {
+    width: 100px; /* Adjust the size of the upload icon */
+    height: 50px;
+    margin-right: 5px;
+  }
+  .submit{
+    top:90%;
+    height: 100px;
+    width: 300px;
+    font-size: 40px;
+    border-radius: 20px;
+    background-color: #00cab6;
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    color: aliceblue;
+    margin-top: 60px;
+    margin-bottom: 4px;
+    cursor: pointer;
+  }
+  .submit:hover {
+    scale: 1.1;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  }
+  .already-button{
+    top:90%;
+    height: 100px;
+    width: 500px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #00cab6;
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    color: aliceblue;
+    margin-top: 50px;
+    margin-bottom: 3px;
+    margin-left: 50px;
+    cursor: pointer;
+  }
+  .already-button:hover {
+    scale: 1.1;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  }
+  

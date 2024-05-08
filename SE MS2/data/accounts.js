@@ -35,4 +35,16 @@ export const donorsAccounts = [
     area: "New Cairo",
     governorate: "Cairo",
   },
+  
 ];
+export const  requestTeacher=[];
+
+export const currentDonor={type: "Volunteer",
+firstName: "Omar",
+lastName: "Ali",
+gender: "male",
+email: "omarali@gmail.com",
+contactNumber: "12345",
+password: "Omar123",
+area: "New Cairo",
+governorate: "Cairo",}
