@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher</title>
+    <link rel="stylesheet" type="text/css" href="../styles/teacherStyles.css" />
+  </head>
+  <body>
+    <div class="title">
+      <a href="../donorUI/volunteer.html"><button class="back-button">Back</button></a>
+      <a href="../donorUI/donorhome.html">
+        <button class="homeback-button" >Back to HomePage</button>
+        </a>
+      <div class="title-text">Teacher's Form</div>
+      <div class="logo-div"> <img class = "logo-img" src="../media/logo2.png" alt="logo"></div>
+    </div>
+    <form class="form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required placeholder="Enter full name">
+    </div>
+    <div class="info">You can teach pro-bono classes OR teach private tutoring</div>
+    <div class="number-group">
+      <label for="numberInput">Number of Pro-Bono Classes:</label>
+      <input type="number" id="numberClasses" name="numberClasses" placeholder="Number of classes" min="0" >
+      <div id="error" style="color: red;"></div>
+      
+      <label for="numberInput">Number of Students to Private Tutor:</label>
+      <input type="number" id="numberStudents" name="numberStudents" placeholder="Number of students" min="0">
+      <div id="error" style="color: red;"></div>
+    </div>
+    <div class="form-group">
+      <label for="fileInput">Upload Verification Document:</label>
+      <div class="custom-file-input">
+        <input type="file" id="fileInput" name="fileInput" class="upload-file">
+        <label for="fileInput" class="file-label">
+          <img src="../media/upload.png" alt="Upload icon" class="upload-icon">
+          Choose File
+        </label>
+        
+      </div>
+      <button type="submit" class="submit">Submit</button>
+      <button type="button" class="already-button">I already volunteered as a teacher before</button>
+    </form>
+    <script src="../javaScript/teacher.js"></script>
+  </body>
+</html>

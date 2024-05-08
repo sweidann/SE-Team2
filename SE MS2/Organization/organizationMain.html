@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Heavenly</title>
+    <link rel="stylesheet" type="text/css" href="../styles/organization.css" />
+</head>
+
+<body>
+    <div class="logo">
+        <img src="../media/logo2.png" alt="Logo">
+    </div>
+    <div class="button-list">
+        <div class="button-row">
+            <img src="../media/home icon.png" alt="Home Icon">
+            <button>Home</button>
+        </div>
+        <div class="button-row">
+            <img src="../media/upload icon.png" alt="Documents Icon">
+            <button>Documents</button>
+        </div>
+        <div class="button-row">
+            <img src="../media/loc icon.png" alt="Location Icon">
+            <button>Location</button>
+        </div>
+        <div class="button-row">
+            <img src="../media/timer icon.png" alt="Pickup Icon">
+            <button>Pickup Time</button>
+        </div>
+        <div class="button-row">
+            <img src="../media/checkmark icon.png" alt="Fulfilled Icon">
+            <button>Fulfilled</button>
+        </div>
+        <div class="post-button">
+            <button>Post</button>
+        </div>
+    </div>
+    <div class="vertical-line"></div>
+    <div class="vertical-line2"></div>
+    <div class="volunteers-list">
+        Volunteers
+        <div class="volunteer">
+            <img src="../media/donor.png" onerror="applyDefaultStyle(this)">
+            Mostafa Ashraf
+        </div>
+        <div class="volunteer">
+            <img src="../media/volunteer.png" onerror="applyDefaultStyle(this)">
+            Mohammed Sweidan
+        </div>
+        <div class="volunteer">
+            <img src="../media/donor.png" onerror="applyDefaultStyle(this)">
+            Ali Maghawry
+        </div>
+        <div class="volunteer">
+            <img src="../media/volunteer.png" onerror="applyDefaultStyle(this)">
+            Ahmed Safwat
+        </div>
+        <div class="volunteer">
+            <img src="../media/donor.png" onerror="applyDefaultStyle(this)">
+            Abdelrahman Mokhtar
+        </div>
+        <div class="volunteer">
+            <img src="../media/volunteer.png" onerror="applyDefaultStyle(this)">
+            Farah Hisham
+        </div>
+    </div>
+    <div class="organization-details">
+        <div class="org">
+            <img src="../media/donor.png" onerror="applyDefaultStyle(this)">
+            Abdelrahman Mokhtar
+        </div>
+    </div>
+    <div class="posts" id="postsarea">
+        Posts
+    </div>
+    <div class="post-window" id="postpopup">
+        <img src="../media/x icon.png" id="closepop">
+        <div class="post-button" id="postnow">
+            <button>Post</button>
+        </div>
+        <select id="dropdown">
+            <option value="" disabled selected>Category</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Toys">Toys</option>
+            <option value="Food">Food</option>
+            <option value="Medical Supplies">Medical Supplies</option>
+            <option value="School Supplies">School Supplies</option>
+            <option value="Blood Donations">Blood Donations</option>
+        </select>
+        <textarea placeholder="Enter name" id="name" style="display: none;"></textarea>
+        <textarea placeholder="Enter type" id="Toytype" style="display: none;"></textarea>
+        <textarea placeholder="Enter use" id="Medicaluse" style="display: none;"></textarea>
+        <textarea placeholder="Enter bloodtype" id="bloodtype" style="display: none;"></textarea>
+        <textarea placeholder="Enter patient name" id="Patientname" style="display: none;"></textarea>
+        <textarea placeholder="Enter RHtype" id="RHtype" style="display: none;"></textarea>
+        <textarea placeholder="Enter hospital name" id="hospitalName" style="display: none;"></textarea>
+        <textarea placeholder="Enter hospital area" id="hospitalArea" style="display: none;"></textarea>
+        <textarea placeholder="Enter hospital goverorate" id="hospitalGov" style="display: none;"></textarea>
+        <textarea placeholder="Enter hospital address" id="hospitalAdd" style="display: none;"></textarea>
+
+        <select id="gender" class=".post-window" style="display: none;">
+            <option value="" disabled selected>Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unisex">Unisex</option>
+        </select>
+        <select id="school" class=".post-window" style="display: none;">
+            <option value="" disabled selected>Choose</option>
+            <option value="Stationary">Stationary</option>
+            <option value="Book">Book</option>
+        </select>
+        <select id="season" class=".post-window" style="display: none;">
+            <option value="" disabled selected>Season</option>
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+            <option value="Autumn">Autumn</option>
+            <option value="Winter">Winter</option>
+            <option value="All">All</option>
+        </select>
+        <select id="category" class=".post-window" style="display: none;">
+            <option value="" disabled selected>Category</option>
+            <option value="Eductaional">Eductaional</option>
+            <option value="Electronic">Electronic</option>
+        </select>
+        <select id="Clothesage" class=".post-window" style="display: none;">
+            <option value="" disabled selected>Age</option>
+            <option value="18+">18+</option>
+            <option value="20+">20+</option>
+            <option value="25+">25+</option>
+            <option value="30+">30+</option>
+            <option value="All">All</option>
+        </select>
+        <select id="Toysage" class=".post-window" style="display: none;">
+            <option value="" disabled selected>Age</option>
+            <option value="3+">3+</option>
+            <option value="4+">4+</option>
+            <option value="5+">5+</option>
+            <option value="6+">6+</option>
+            <option value="7+">7+</option>
+            <option value="8+">8+</option>
+            <option value="9+">9+/option>
+            <option value="10+">10+</option>
+            <option value="All">All</option>
+        </select>
+        <select id="type" class=".post-window" style="display: none;">
+            <option value="" disabled selected>Type</option>
+            <option value="Casual">Casual</option>
+            <option value="Formal">Formal</option>
+            <option value="Sports">Sport</option>
+        </select>
+        <select id="material" class=".post-window" style="display: none;">
+            <option value="" disabled selected>Material</option>
+            <option value="Cotton">Cotton</option>
+            <option value="Polyester">Polyester</option>
+            <option value="Wool">Wool</option>
+            <option value="Silk">Silk</option>
+            <option value="Leather">Leather</option>
+            <option value="Synthetic">Synthetic</option>
+            <option value="Satin">Satin</option>
+        </select>
+        <textarea placeholder="Enter amount" id="amount" style="display: none;"></textarea>
+        <div class="file-upload-container" style="display: none;" id="imageUploading">
+            <input type="file" id="imageUpload" accept="image/*">
+            <label for="imageUpload">Upload Image</label>
+        </div>
+    </div>
+    <div class="notifications" id="notify">
+        <div class="notification">
+            <img src="../media/x icon.png">
+            <button>view details</button>
+            <p>This is an example of a notification</p>
+        </div>
+        <div class="notification">
+            <img src="../media/x icon.png">
+            <button>view details</button>
+            <p>This is an example of a notification</p>
+        </div>
+        <div class="notification">
+            <img src="../media/x icon.png">
+            <button>view details</button>
+            <p>This is an example of a notification</p>
+        </div>
+        <div class="notification">
+            <img src="../media/x icon.png">
+            <button>view details</button>
+            <p>This is an example of a notification</p>
+        </div>
+    </div>
+    <script src="../scripts/organization.js"></script>
+</body>
+
+</html>
