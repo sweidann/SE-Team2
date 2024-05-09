@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor</title>
+    <link rel="stylesheet" type="text/css" href="../styles/doctorStyles.css" />
+  </head>
+  <body>
+    <div class="title">
+      <a href="../donorUI/volunteer.html"><button class="back-button">Back</button></a>
+      <a href="../hompage.html">
+        <button class="homeback-button" >Back to HomePage</button>
+        </a>
+      <div class="title-text">Doctor's Form</div>
+      <div class="logo-div"> <img class = "logo-img" src="../media/logo2.png" alt="logo"></div>
+    </div>
+    <form class="form" id="myForm">
+      
+    <div class="form-group">
+      <label for="firstName">~First Name:</label>
+    <input type="text" id="firstName" name="firstName" required placeholder="Enter first name">
+    
+    <label for="lastName"> ~Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required placeholder="Enter last name">
+  </div>
+  <div class="form-group">
+    <label for="specialty">Specialty:</label>
+<select id="specialty" name="specialty" required>
+    <option value="" disabled selected>Select your specialty</option>
+    <option value="Dermatology">Dermatology</option>
+    <option value="Radiology">Radiology</option>
+    <option value="Surgeon">Surgeon</option>
+    <option value="Emergencymedicine">Emergency medicine</option>
+    <option value="Medicalgenetics">Medical genetics</option>
+    <!-- Add more options as needed -->
+</select>
+  <div class="number-group">
+    <label for="numberInput">~Number of Pro-Bono Cases:</label>
+    <input type="number" id="numbercases" name="numbercases" placeholder="Number of classes" min="0" >
+    <div id="error" style="color: red;"></div>
+  </div>
+  </div>
+  <div class="info">Clinic Location</div>
+  <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13821.971755776294!2d31.502739849999998!3d29.99399915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1715267987014!5m2!1sen!2seg" width="600" height="450" style="border:0;"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <div class="form-group">
+    <label for="address">~Address:</label>
+  <input type="text" id="address" name="address" required placeholder="Enter address">
+  <label for="area"> ~Area:</label>
+  <input type="text" id="area" name="area" required placeholder="Enter area">
+  <label for="governate"> ~Governate:</label>
+  <input type="text" id="governate" name="governate" required placeholder="Enter governate">
+  
+  </div>
+    
+    <div class="button-group">
+      <label for="fileInput">Upload Verification Document:</label>
+      <div class="custom-file-input">
+        <input type="file" id="fileInput" name="fileInput" class="upload-file">
+        <label for="fileInput" class="file-label">
+          <img src="../media/upload.png" alt="Upload icon" class="upload-icon">
+          Choose File
+        </label>
+        
+      </div>
+      <button type="submit" class="submit">Submit</button>
+      <button type="button" class="already-button">I already volunteered as a teacher before</button>
+    </form>
+    <div id="error-message"></div>
+    <script type="module" src="../javaScript/doctor.js"></script>
+  </body>
+</html>

@@ -1,0 +1,488 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ac86da;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  html {
+    overflow-y: scroll;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  .side-div{
+    height: 100%;
+    width:80%;
+  }
+  
+  .middle-div {
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    background-color: #ac86da;
+  }
+  
+  .upper {
+    height: 25vh;
+    background-color: #8e65c0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .back-button{
+    position: absolute; /* Position the button absolutely */
+    top: 20px; /* Adjust the distance from the top */
+    left: 50px;
+    height: 50px;
+    width: 50px;
+    font-size: 10px;
+    border-radius: 50px;
+    background-color: #00cab6;
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    color: aliceblue;
+    left: 0%;
+   cursor: pointer;
+  }
+  .back-button:hover {
+    scale: 1.1;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  }
+  .homeback-button{
+    width: 12vw;
+    height: 8vh;
+    background-color: #00cab6;
+    position: absolute;
+    border: none;
+    color: #fff;
+    top: 15%;
+    left: 1%;
+    cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+  
+  .homeback-button:hover {
+    scale: 1.1;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  }
+  
+  .titles-div {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1vh;
+    
+  }
+
+  .logo-div {
+    width: 20%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    left:2%;
+  }
+  
+  .logo-img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .title-div {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    color: white;  
+  }
+  
+  .account-div {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .account-button {
+    height: 60%;
+    width: 45%;
+    background-color: #00cab6;
+    font-size: 2em;
+    border-radius: 50%;
+    border: none;
+    color: white;
+  }
+  
+  .subhead-div {
+    height: 44%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: rgba(255, 255, 255, 0.808);
+    font-size: 2em;
+    font-style: italic;
+   
+  }
+  
+  .working {
+    height: inherit;
+    width: 100%;
+    
+  }
+  .lower {
+    height: 100%;
+    padding-top: 2vh;
+    gap: 2vw;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .cats-div {
+    width: 90%;
+    
+    min-width: 200px;
+    border-radius: 20px;
+    background-color: #ac86da;
+    min-height: 68vh;
+    max-height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    align-self: self-start;
+  }
+  
+  .cat1,
+  .cat2,
+  .cat3 {
+    width: 75%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: fit-content;
+    gap: 2.5vh;
+    background-color: #ac86da;
+  }
+  
+  .cat-name {
+    font-size: 1.4em;
+  }
+  
+  .cat-options {
+    padding-left: 2vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    font-size: 1.2em;
+    background-color: #ac86da;
+  }
+  
+  .option-row {
+    width: 100%;
+  }
+  
+  input[type="checkbox"] {
+    transform: scale(1.5);
+    border: none;
+  }
+  
+  input[type="checkbox"]:checked {
+    height: 100%;
+    content: "✔";
+    font-size: 16px; /* Adjust size of the checkmark */
+    color: white; /* Color of the checkmark */
+  }
+  .cat-options1 select {
+    width: 150px; /* Set the width of the dropdown */
+    height: 30px; /* Set the height of the dropdown */
+    padding: 5px; /* Add padding for better appearance */
+    font-size: 16px; /* Set the font size */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    background-color: #fff; /* Set background color */
+    color: #333; /* Set text color */
+  }
+ 
+  /* Style the options */
+  .cat-options1 select option {
+    padding: 5px; /* Add padding */
+  }
+  
+  .posts-part-div {
+    border-radius: 20px;
+    width: 100%;
+    gap: 2vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    
+    background-color: #fbfbfc;
+  }
+  
+  .post-div {
+    border: 5px solid  #ac86da;
+    border-radius: 20px;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2vw;
+    padding: 0px 10px;
+  }
+  
+  .post-pic-div {
+    width: 35%;
+    height: 90%;
+    overflow: hidden;
+    border-radius: 20px;
+    
+  }
+  
+  .book-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  
+  .details-div {
+    display: flex;
+    width: 100%;
+    height: 90%;
+    flex-direction: column;
+  }
+  
+  .item-subj {
+    color: #8e65c0;
+    font-size: 2.8em;
+    font-weight: bold;
+    padding: 1vh;
+  }
+  
+  .org-posting {
+    color: #bcb7b7;
+    font-size: 1.3em;
+    padding: 1vh;
+  }
+  
+  .buttons-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    height: 100%;
+    gap: 10px;
+  }
+  
+  .details-button
+  {
+    width: 26%;
+    max-width: 10.5vw;
+    height: 60%;
+    border-radius: 50px;
+    color: #8e65c0;
+    border-color: #8e65c0;
+    font-size: 1.3em;
+    background-color: white;
+    font-weight: bold;
+    border-width: 3px;
+    border-style: solid;
+  }
+  
+  .modal,
+  #productModal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content,
+  .modal-donate-content {
+    background-color: #ac86da;
+    margin: 10% auto;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 40%;
+    color: white;
+  }
+  
+  .modal-donate-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inside-thank-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 7vh;
+    font-size: 2em;
+  }
+  
+  .upper-inside-thank {
+    width: 100%;
+  }
+  
+  .continue-button-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+  }
+  
+  .continue-button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #00cab6;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.5em;
+    padding: 3vh 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #numberSelect,
+  #numberSelect:focus {
+    width: 10%;
+    height: auto;
+    max-height: 50vh;
+    border-radius: 20px;
+    overflow-y: scroll;
+    border-color: #ac86da;
+    font-size: 1em;
+    color: #8e65c0;
+  }
+  
+  .quantity-div {
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-top: 0.5vh;
+  }
+  
+  .inside-donate-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+  }
+  
+  .upper-inside-donate {
+    display: flex;
+  }
+  
+  .close-button-div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+  }
+  
+  .confirm-button-div {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    flex-direction: row;
+    height: 5vh;
+  }
+  
+  .confirm-button {
+    width: 17%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #00cab6;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+  }
+  
+  h2 {
+    font-weight: bold;
+  }
+  
+  .close-button {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-button-donate {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    justify-content: end;
+  }
+  
+  .close-button:hover,
+  .close-button-donate:hover,
+  .close-button:focus,
+  .close-button-donate:focus {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .donate-button {
+    width: 17%;
+    max-width: 7vw;
+    height: 60%;
+    border-radius: 50px;
+    background-color: #00cab6;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+  .cancel-button {
+    width: 17%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #00cab6;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+    margin-left: 400px;
+  }
+  
+  .button-container{
+    display:flex ;
+    flex-direction: row;
+    
+  }

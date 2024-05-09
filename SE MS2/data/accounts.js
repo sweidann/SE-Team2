@@ -38,8 +38,8 @@ export const donorsAccounts = [
   
 ];
 export const  requestTeacher=[];
-
-export const currentDonor={type: "Volunteer",
+export const requestDoctor=[];
+export const currentDonor={type: "Doctor",
 firstName: "Omar",
 lastName: "Ali",
 gender: "male",

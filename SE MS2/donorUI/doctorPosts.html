@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher</title>
-    <link rel="stylesheet" type="text/css" href="../styles/teacherPoststyles.css" />
+    <title>Doctor</title>
+    <link rel="stylesheet" type="text/css" href="../styles/doctorPoststyles.css" />
   </head>
   <body>
     <div class="upper">
@@ -21,7 +21,8 @@
             </div>
           </div>
           <div class="subhead-div">
-            --All available teaching posts.--
+            
+            --All available doctor posts.--
           </div>
         </div>
     </div>
@@ -29,29 +30,38 @@
         <div class="lower">
           <div class="cats-div">
             <div class="cat1">
-              <div class="cat-name">Subject</div>
+              <div class="cat-name">Specialty</div>
               <div class="cat-options">
                 <div class="option-row">
                   <input type="checkbox" name="checkbox" />
-                  <label for="checkbox">English</label>
+                  <label for="checkbox"> Dermatology</label>
                 </div>
                 <div class="option-row">
                   <input type="checkbox" name="checkbox" />
-                  <label for="checkbox">Math</label>
+                  <label for="checkbox">Radiology</label>
                 </div>
                 <div class="option-row">
                   <input type="checkbox" name="checkbox" />
-                  <label for="checkbox">Science</label>
+                  <label for="checkbox">Surgeon</label>
                 </div>
                 <div class="option-row">
                     <input type="checkbox" name="checkbox" />
-                    <label for="checkbox">History</label>
+                    <label for="checkbox">Emergency medicine</label>
                 </div><div class="option-row">
                     <input type="checkbox" name="checkbox" />
-                    <label for="checkbox">Arabic</label>
+                    <label for="checkbox">Medical genetics</label>
                 </div>
              </div>
             </div>
+        <div class="cat3">
+            <div class="cat-name">Organization</div>
+            <div class="cat-options1">
+                <select id="organization" name="organization" required>
+                    <option value="" disabled selected>Select organization</option>
+                    
+                </select>
+            </div>
+          </div>
             <div class="cat2">
               <div class="cat-name">Governate</div>
               <div class="cat-options">
@@ -92,5 +102,5 @@
           <div class="posts-part-div"></div>
         </div>
       </div>
-      <script type="module" src="../javaScript/teacherPosts.js"></script>
+      <script type="module" src="../javaScript/doctorPosts.js"></script>
   </body>  

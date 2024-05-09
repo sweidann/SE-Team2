@@ -1,5 +1,5 @@
 console.log('Script loaded');
-import {requestTeacher, currentDonor} from "../data/accounts.js"
+import {requestDoctor, currentDonor} from "../data/accounts.js"
 document.getElementById('fileInput').addEventListener('change', function() {
     var fileLabel = document.querySelector('.file-label'); // Get the label element associated with the file input
     var fileName = this.value.split('\\').pop(); // Get the filename without path
@@ -14,14 +14,19 @@ document.getElementById('fileInput').addEventListener('change', function() {
   function validateForm() {
     const firstname = document.getElementById('firstName').value.trim();
     const lastname = document.getElementById('lastName').value.trim();
-    const numberClasses = document.getElementById('numberClasses').value.trim();
-    const numberStudents = document.getElementById('numberStudents').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const area = document.getElementById('area').value.trim();
+    const governate = document.getElementById('governate').value.trim();
+    const specialty = document.getElementById('specialty').value.trim();
+    const numbercases = document.getElementById('numbercases').value.trim();
+
     const fileInput = document.getElementById('fileInput').value.trim();
-    if ( !numberClasses || !numberStudents) {
+    if ( !numbercases ) {
       alert('Enter a Number, if none then enter 0');
       return false; 
     }
-    if (!firstname || !lastname  || !fileInput) {
+    if (!firstname || !lastname  || !fileInput || !address  
+      || !area || !governate || !specialty) {
       alert('All fields are required');
       return false; 
     }
@@ -34,18 +39,21 @@ document.getElementById('fileInput').addEventListener('change', function() {
     if (validateForm()) {
       // Save data to array
       var fileLabel = document.querySelector('.file-label');
-      const teacher = {
+      const doctor = {
         firstName: document.getElementById('firstName').value.trim(),
         lastName: document.getElementById('lastName').value.trim(),
-        numberClasses: document.getElementById('numberClasses').value.trim(),
-        numberStudents: document.getElementById('numberStudents').value.trim(),
+        numbercases: document.getElementById('numbercases').value.trim(),
+        specialty: document.getElementById('specialty').value.trim(),
+        address: document.getElementById('address').value.trim(),
+        area: document.getElementById('area').value.trim(),
+        governate: document.getElementById('governate').value.trim(),
         fileInput: document.getElementById('fileInput').value.trim(),
       };
   
       
-      requestTeacher.push(teacher);
+      requestDoctor.push(doctor);
       alert("Request to be a volunteer has been sent, wait for confirmation email");
-      console.log(requestTeacher.length);
+      console.log(requestDoctor.length);
       // Clear form fields
       document.getElementById('myForm').reset();
       document.getElementById('error-message').textContent = ''; 
@@ -60,11 +68,11 @@ document.getElementById('fileInput').addEventListener('change', function() {
     const lastName = document.getElementById('lastName').value.trim();
 
     // Search the donorsAccount array for the submitted first name
-    const foundVolunteer = currentDonor.type=="Teacher";
+    const foundVolunteer = currentDonor.type=="Doctor";
 
     // If the first name is found in the donorsAccount array, redirect to another page
     if (foundVolunteer) {
-        window.location.href = 'teacherPosts.html';
+        window.location.href = 'doctorPosts.html';
     } else {
         // If the first name is not found, display an alert or handle the case accordingly
         alert('You are not registered as a volunteer.');

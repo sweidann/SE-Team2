@@ -20,11 +20,22 @@
     <div class="form-group">
       <label for="firstName">First Name:</label>
     <input type="text" id="firstName" name="firstName" required placeholder="Enter first name">
+    
     <label for="lastName">Last Name:</label>
     <input type="text" id="lastName" name="lastName" required placeholder="Enter last name">
   </div>
-  
-    <div class="info">You can teach pro-bono classes OR teach private tutoring</div>
+  <div class="form-group">
+    <label for="subject">Subject:</label>
+  <select id="subject" name="subject" required>
+    <option value="" disabled selected>Select your subject</option>
+    <option value="English">English</option>
+    <option value="Math">Math</option>
+    <option value="Science">Science</option>
+    <option value="History">History</option>
+    <option value="Arabic"> Arabic</option>
+    <!-- Add more options as needed -->
+</select></div>
+    <div class="info">*You can teach pro-bono classes OR teach private tutoring*</div>
     <div class="number-group">
       <label for="numberInput">Number of Pro-Bono Classes:</label>
       <input type="number" id="numberClasses" name="numberClasses" placeholder="Number of classes" min="0" >
@@ -34,7 +45,7 @@
       <input type="number" id="numberStudents" name="numberStudents" placeholder="Number of students" min="0">
       <div id="error" style="color: red;"></div>
     </div>
-    <div class="form-group">
+    <div class="button-group">
       <label for="fileInput">Upload Verification Document:</label>
       <div class="custom-file-input">
         <input type="file" id="fileInput" name="fileInput" class="upload-file">

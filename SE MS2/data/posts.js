@@ -347,3 +347,76 @@ export const bloodPosts = [
     Amount: 7,
   },
 ];
+export const teacherPosts=[
+  {
+    id: "1",
+    subject:"English",
+    numberOfStudents: "10",
+    address:"10 akoya road, New Cairo",
+    image:"../media/map.png",
+    Organization:"Shefa",
+
+  },
+  {
+    id: "2",
+    subject:"English",
+    numberOfStudents: "10",
+    address:"10 akoya road, New Cairo",
+    image:"../media/map.png",
+    Organization:"Shefa",
+
+  },
+  {
+    id: "3",
+    subject:"Math",
+    numberOfStudents: "10",
+    address:"10 akoya road, New Cairo",
+    image:"../media/map.png",
+    Organization:"Shefa",
+
+  }
+] ;
+export const doctorPosts=[
+  {
+    id: "1",
+    specialty:"Dermatology",
+    patientName:"Ahmed",
+    patientAge: "10",
+    gender:"Male",
+    Weight:"50KG",
+    area:"10 akoya road, New Cairo",
+    governate:"Aswan",
+    Organization:"Shefa",
+    description:"needs urgent care",
+    image:"../media/map.png",
+
+  },
+  {
+    id: "2",
+    specialty:"Radiology",
+    patientName:"Ahmed",
+    patientAge: "10",
+    gender:"Male",
+    Weight:"50KG",
+    area:"10 akoya road, New Cairo",
+    governate:"Aswan",
+    Organization:"Shefa",
+    description:"needs urgent care",
+    image:"../media/map.png",
+
+  },
+  {
+    id: "3",
+    specialty:"Dermatology",
+    patientName:"Ahmed",
+    patientAge: "10",
+    gender:"Male",
+    Weight:"50KG",
+    area:"10 akoya road, New Cairo",
+    governate:"Aswan",
+    Organization:"Shefa",
+    description:"needs urgent care",
+    image:"../media/map.png",
+
+  }
+] ;
