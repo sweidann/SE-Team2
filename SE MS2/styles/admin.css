@@ -1,0 +1,889 @@
+body {
+    background-color: #8e65c0;
+  }
+  input {
+    text-align: center;
+  }
+  
+  ::-webkit-input-placeholder {
+    text-align: center;
+  }
+  
+  :-moz-placeholder {
+    text-align: center;
+  }
+  h1 {
+    position: absolute;
+    left: 1000px;  
+    color: #f4effa;
+    
+  }
+  body {
+    background-color: #8e65c0;
+  }
+
+.button-list {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+.button-row {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-bottom: 5px;
+    border-radius: 35px;
+    transition: background-color 0.3s;
+    border-color: transparent;
+  }
+  
+.button-row img {
+    margin-right: auto;
+    height: 35px;
+    width: 35px;
+    vertical-align: middle;
+  }
+
+.button-row button {
+    margin-bottom: auto;
+    height: 50px;
+    background-color: transparent;
+    border-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+  } 
+  
+.button-row:hover {
+    background-color: #ac86da;
+  }
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+  }
+  
+.logo img {
+    height: 100px;
+    width: 142px;
+  }
+.volunteer {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-top: 12px;
+    border-color: transparent;
+    font-weight: bold;
+}
+
+.volunteer img {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+}
+
+.default-style {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #00cab6;
+}
+
+.organization-details {
+    position: absolute;
+    top: 475px;
+    left: 15px;
+    bottom: 0px;
+    color: white;
+}
+
+.org {
+    border-color: transparent;
+    font-weight: bold;
+}
+
+.org img {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+}
+h1 {
+  position: absolute;
+  left: 550px;  
+  color: white;
+}
+.box{
+  background-color: #c186da;
+  position: absolute;
+  left: 350px;
+  top: 100px;
+  width: 400px;
+  height: 900px;    
+  border: 1px solid white;
+  padding: 50px;
+  margin: 20px;
+}
+.dashboard{
+    position: fixed;   
+    left: -550px;
+    width: 150%;
+    top: 10px;
+    color: #7247a8;
+    font-size: 50px;
+    text-align: center;
+    align-items: center;
+    z-index: 0;
+    height: 100px;
+    font-weight: 200px;
+}
+.background{
+        top: 0%;
+        position: fixed;
+        width: 100%; 
+        height: 100px; 
+        background-color: white 
+}
+.list{
+    position: fixed;
+    top: -10px;
+    left: -20px;
+    z-index : 5;
+    background-color: #723fb0;
+    width: 250px;
+    height: 730px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.ba2eetelmain{
+    z-index: -5;
+    background-color: #8e65c0;
+}
+.ba2eetelmainAccounts{
+    z-index: -5;
+    background-color: #8e65c0;
+}
+.organization{
+    color: white;
+    background: transparent;
+    text-align: center;
+    font-size: 30px;
+    top: 115px;
+    position: fixed;
+    left: 650px;
+    overflow: hidden;
+}
+.requests{
+    position: fixed;
+    color: white;
+    background: transparent;
+    left: 450px;
+    top: 150px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+.requests button {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    background: transparent;
+    border-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+  }
+  .requests button:hover {
+    color: #00cab6;
+    transition: 0.7s;
+    text-emphasis-color:#79cde9 ;
+  }
+  .requests button:active {
+    color: #00cab6;
+  }
+.registered{
+    position: fixed;
+    color: white;
+    background: transparent;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    left: 900px;
+    top: 150px;
+}
+.registered button {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    background: transparent;
+    border-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+  }
+  .registered button:hover {
+    transition: 0.7s;
+    color: #00cab6;
+  }
+  .registered button:active {
+    color: #00cab6;
+  }
+  .name{
+    color: white;
+    position: fixed;
+    top: -75px;
+    left: 10px;
+    font-size: 30px;
+  }
+  .line{
+    width: 136%;
+    position: relative;
+    left: -50px;
+  }
+  .profile-picture {
+    position: fixed;
+    top: 8px;
+    left: 1150px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; 
+    overflow: hidden; 
+    background-color: #00cab6;
+    
+  }
+  .text{
+    color: white;
+    position: relative;
+    top: 13px;
+    text-align: center;
+    font-size: 30px;
+    right: 0px;
+  }
+  .line2{
+    width: 136%;
+    position: fixed;
+    top: 215px;
+    left: -50px;
+  }
+  .organizationName{
+    color: white;
+    position: fixed;
+    left: 300px;
+    top: 256px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .button1 {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    background: white;
+    border-color: transparent;
+    color: #8e65c0;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 30px;
+    left: 900px;
+    top: 240px;
+  }
+  .button1:hover{
+    background-color: #9f8db5;
+  }
+  .button2 {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50px;
+    background: #8e65c0;
+    border-color: white;
+    border-radius: 50%;
+    left: 1050px;
+    top: 240px;
+  }
+  .button2 img{ 
+    width: 20px; 
+    height: auto; 
+    vertical-align: middle;
+  }
+  .button2:hover{
+    background-color: #00cab6;
+  }
+  .button3 {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50px;
+    background: #8e65c0;
+    border-color: white;
+    border-radius: 50%;
+    left: 1120px;
+    top: 240px;
+  }
+  .button3 img{
+    width: 20px; 
+    height: auto; 
+    vertical-align: middle; 
+  }
+  .button3:hover{
+    background-color: #FF0000;
+  }
+  .line3{
+    width: 136%;
+    position: fixed;
+    top: 315px;
+    left: -50px;
+  }
+  .line4{
+    width: 136%;
+    position: fixed;
+    top: 415px;
+    left: -50px;
+  }
+  .line5{
+    width: 136%;
+    position: fixed;
+    top: 515px;
+    left: -50px;
+  }
+  .organizationName1{
+    color: white;
+    position: fixed;
+    left: 300px;
+    top: 356px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .organizationName2{
+    color: white;
+    position: fixed;
+    left: 300px;
+    top: 456px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .organizationName3{
+    color: white;
+    position: fixed;
+    left: 300px;
+    top: 556px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .button11 {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    background: white;
+    border-color: transparent;
+    color: #8e65c0;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 30px;
+    left: 900px;
+    top: 340px;
+  }
+  .button11:hover{
+    background-color: #9f8db5;
+  }
+  .button21 {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50px;
+    background: #8e65c0;
+    border-color: white;
+    border-radius: 50%;
+    left: 1050px;
+    top: 340px;
+  }
+  .button21 img{
+    width: 20px; 
+    height: auto; 
+    vertical-align: middle; 
+  }
+  .button21:hover{
+    background-color: #00cab6;
+  }
+  .button31 {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50px;
+    background: #8e65c0;
+    border-color: white;
+    border-radius: 50%;
+    left: 1120px;
+    top: 340px;
+  }
+  .button31 img{
+    width: 20px; 
+    height: auto; 
+    vertical-align: middle; 
+  }
+  .button31:hover{
+    background-color: #FF0000;
+  }
+  .button12 {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    background: white;
+    border-color: transparent;
+    color: #8e65c0;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 30px;
+    left: 900px;
+    top: 440px;
+  }
+  .button12:hover{
+    background-color: #9f8db5;
+  }
+  .button22 {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50px;
+    background: #8e65c0;
+    border-color: white;
+    border-radius: 50%;
+    left: 1050px;
+    top: 440px;
+  }
+  .button22 img{
+    width: 20px; 
+    height: auto; 
+    vertical-align: middle; 
+  }
+  .button22:hover{
+    background-color: #00cab6;
+  }
+  .button32 {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50px;
+    background: #8e65c0;
+    border-color: white;
+    border-radius: 50%;
+    left: 1120px;
+    top: 440px;
+  }
+  .button32 img{
+    width: 20px; 
+    height: auto; 
+    vertical-align: middle; 
+  }
+  .button32:hover{
+    background-color: #FF0000;
+  }
+  .button13{
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    background: white;
+    border-color: transparent;
+    color: #8e65c0;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 30px;
+    left: 900px;
+    top: 540px;
+  }
+  .button13:hover{
+    background-color: #9f8db5;
+  }
+  .button23 {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50px;
+    background: #8e65c0;
+    border-color: white;
+    border-radius: 50%;
+    left: 1050px;
+    top: 540px;
+  }
+  .button23 img{
+    width: 20px; 
+    height: auto; 
+    vertical-align: middle; 
+  }
+  .button23:hover{
+    background-color: #00cab6;
+  }
+  .button33 {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50px;
+    background: #8e65c0;
+    border-color: white;
+    border-radius: 50%;
+    left: 1120px;
+    top: 540px;
+  }
+  .button33 img{
+    width: 20px; 
+    height: auto; 
+    vertical-align: middle; 
+  }
+  .button33:hover{
+    background-color: #FF0000;
+  }
+  .accounts{
+    color: white;
+    background: transparent;
+    text-align: center;
+    font-size: 30px;
+    top: 115px;
+    position: fixed;
+    left: 650px;
+    overflow: hidden;
+}
+.lineAccounts{
+    width: 136%;
+    position: fixed;
+    top: 150px;
+    left: -50px;
+}
+.lineAccounts1{
+    width: 136%;
+    position: fixed;
+    top: 250px;
+    left: -50px;
+}
+.lineAccounts2{
+    width: 136%;
+    position: fixed;
+    top: 350px;
+    left: -50px;
+}
+.lineAccounts3{
+    width: 136%;
+    position: fixed;
+    top: 450px;
+    left: -50px;
+}
+.lineAccounts4{
+    width: 136%;
+    position: fixed;
+    top: 550px;
+    left: -50px;
+}
+
+.type{
+    color: white;
+    position: fixed;
+    left: 700px;
+    top: 180px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .accountName{
+    color: white;
+    position: fixed;
+    left: 300px;
+    top: 200px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .buttonAccounts {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50px;
+    background: #8e65c0;
+    border-color: white;
+    border-radius: 50%;
+    left: 1100px;
+    top: 190px;
+  }
+  .buttonAccounts img{
+    width: 20px; 
+    height: auto; 
+    vertical-align: middle; 
+  }
+  .buttonAccounts:hover{
+    background-color: #FF0000;
+  }
+  .type1{
+    color: white;
+    position: fixed;
+    left: 700px;
+    top: 280px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .accountName1{
+    color: white;
+    position: fixed;
+    left: 300px;
+    top: 300px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .buttonAccounts1{
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50px;
+    background: #8e65c0;
+    border-color: white;
+    border-radius: 50%;
+    left: 1100px;
+    top: 290px;
+  }
+  .buttonAccounts1 img{
+    width: 20px; 
+    height: auto; 
+    vertical-align: middle; 
+  }
+  .buttonAccounts1:hover{
+    background-color: #FF0000;
+  }
+  .type2{
+    color: white;
+    position: fixed;
+    left: 700px;
+    top: 380px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .accountName2{
+    color: white;
+    position: fixed;
+    left: 300px;
+    top: 400px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .buttonAccounts2 {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50px;
+    background: #8e65c0;
+    border-color: white;
+    border-radius: 50%;
+    left: 1100px;
+    top: 390px;
+  }
+  .buttonAccounts2 img{
+    width: 20px; 
+    height: auto; 
+    vertical-align: middle; 
+  }
+  .buttonAccounts2:hover{
+    background-color: #FF0000;
+  }
+  .type3{
+    color: white;
+    position: fixed;
+    left: 700px;
+    top: 480px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .accountName3{
+    color: white;
+    position: fixed;
+    left: 300px;
+    top: 500px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .buttonAccounts3{
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50px;
+    background: #8e65c0;
+    border-color: white;
+    border-radius: 50%;
+    left: 1100px;
+    top: 490px;
+  }
+  .buttonAccounts3 img{
+    width: 20px; 
+    height: auto; 
+    vertical-align: middle; 
+  }
+  .buttonAccounts3:hover{
+    background-color: #FF0000;
+  }
+  .type4{
+    color: white;
+    position: fixed;
+    left: 700px;
+    top: 580px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .accountName4{
+    color: white;
+    position: fixed;
+    left: 300px;
+    top: 600px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .buttonAccounts4 {
+    position: fixed;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50px;
+    background: #8e65c0;
+    border-color: white;
+    border-radius: 50%;
+    left: 1100px;
+    top: 590px;
+  }
+  .buttonAccounts4 img{
+    width: 20px; 
+    height: auto; 
+    vertical-align: middle; 
+  }
+  .buttonAccounts4:hover{
+    background-color: #FF0000;
+  }
+  .panel1 {
+    background-color: #8e65c0; 
+    border: 1px solid #FFFFFF;
+    border-radius: 20px; 
+    padding: 20px; 
+    width: 275px; 
+    position: relative;
+    top: 150px;
+    left: 300px;
+    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.5);
+  }  
+  .panel-header1 {
+    background-color: #8e65c0; 
+    color: white; 
+    padding: 10px; 
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px;
+    text-align: left;
+    position: relative;
+    top: -20px;
+    left: -8px;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  
+  .panel-body1{
+    padding: 10px; 
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    position: relative;
+    top: -10px;
+  }
+  .panel2 {
+    background-color: #8e65c0; 
+    border: 1px solid #FFFFFF;
+    border-radius: 20px; 
+    padding: 20px; 
+    width: 275px; 
+    position: relative;
+    top: -7px;
+    left: 800px;
+    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.5);
+  }  
+  .panel-header2 {
+    background-color: #8e65c0; 
+    color: white; 
+    padding: 10px; 
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px;
+    text-align: left;
+    position: relative;
+    top: -20px;
+    left: -8px;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  
+  .panel-body2{
+    padding: 10px; 
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    position: relative;
+    top: -10px;
+  }
+  .panel3 {
+    background-color: #8e65c0; 
+    border: 1px solid #FFFFFF;
+    border-radius: 20px; 
+    padding: 20px; 
+    width: 275px; 
+    position: relative;
+    top: 100px;
+    left: 300px;
+    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.5);
+  }  
+  .panel-header3 {
+    background-color: #8e65c0; 
+    color: white; 
+    padding: 10px; 
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px;
+    text-align: left;
+    position: relative;
+    top: -20px;
+    left: -8px;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  
+  .panel-body3{
+    padding: 10px; 
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    position: relative;
+    top: -10px;
+  }
+  .panel4 {
+    background-color: #8e65c0; 
+    border: 1px solid #FFFFFF;
+    border-radius: 20px; 
+    padding: 20px; 
+    width: 275px; 
+    position: relative;
+    top: -55px;
+    left: 800px;
+    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.5);
+  }  
+  .panel-header4 {
+    background-color: #8e65c0; 
+    color: white; 
+    padding: 10px; 
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px;
+    text-align: left;
+    position: relative;
+    top: -20px;
+    left: -8px;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  
+  .panel-body4{
+    padding: 10px; 
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    position: relative;
+    top: -10px;
+  }
