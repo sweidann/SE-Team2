@@ -2,12 +2,12 @@
 <html>
   <head>
     <title>Heavenly</title>
-    <link rel="stylesheet" type="text/css" href="styles/organization.css" />
+    <link rel="stylesheet" type="text/css" href="styles/megz.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <div class="logo">
+    <!-- <div class="logo">
       <img src="media/logo2.png" alt="Logo" />
     </div>
     <div class="logo">
@@ -66,76 +66,84 @@
         <img src="media/volunteer icon.png" onerror="applyDefaultStyle(this)" />
         Farah Hisham
       </div>
-    </div>
-
-    <div class="Documents">Documents</div>
+    </div> -->
 
     <div class="box">
+      <div class="Documents">Documents</div>
       <div class="container">
-        <div class="button-text">
+        <div class="button-text" id="button-text1">
           <p class="text">Enter Employement Contract:</p>
           <button
             class="button"
-            onclick="handleUploadButtonClick()"
+            id="button1"
+            onclick="handleUploadButtonClick(1)"
             onerror="applyDefaultStyle(this)"
           >
             Upload File
           </button>
+          <input type="file" id="fileInput1" style="display: none" />
         </div>
-        <div class="button-text">
+        <div class="button-text" id="button-text2">
           <p class="text">ID Badge:</p>
           <button
             class="button"
-            onclick="handleUploadButtonClick()"
+            id="button1"
+            onclick="handleUploadButtonClick(2)"
             onerror="applyDefaultStyle(this)"
           >
             Upload File
           </button>
+          <input type="file" id="fileInput2" style="display: none" />
         </div>
-        <div class="button-text">
-          <p class="text">Incorporation Certificate</p>
+        <div class="button-text" id="button-text3">
+          <p class="text">Incorporation Certificate:</p>
           <button
             class="button"
-            onclick="handleUploadButtonClick()"
+            id="button1"
+            onclick="handleUploadButtonClick(3)"
             onerror="applyDefaultStyle(this)"
           >
             Upload File
           </button>
-          <input type="file" id="fileInput" style="display: none" />
+          <input type="file" id="fileInput3" style="display: none" />
         </div>
 
-        <div class="button-text">
-          <p class="text">Tax Exemption Certificate</p>
+        <div class="button-text" id="button-text4">
+          <p class="text">Tax Exemption Certificate:</p>
           <button
             class="button"
-            onclick="handleUploadButtonClick()"
+            id="button1"
+            onclick="handleUploadButtonClick(4)"
             onerror="applyDefaultStyle(this)"
           >
             Upload File
           </button>
+          <input type="file" id="fileInput4" style="display: none" />
         </div>
-        <div class="button-text">
-          <p class="text">Business License</p>
+        <div class="button-text" id="button-text5">
+          <p class="text">Business License:</p>
 
           <button
             class="button"
-            onclick="handleUploadButtonClick()"
+            id="button1"
+            onclick="handleUploadButtonClick(5)"
             onerror="applyDefaultStyle(this)"
           >
             Upload File
           </button>
-          <input type="file" id="fileInput" />
+          <input type="file" id="fileInput5" style="display: none" />
         </div>
-        <div
-          class="post-button"
-          id="submitButton"
-          onclick="handleSubmitButtonClick()"
-        >
-          Submit
-        </div>
+      </div>
+      <div
+        class="submit-button"
+        id="submitButton"
+        onclick="handleSubmitButtonClick()"
+      >
+        Submit
       </div>
       <p id="statusMessage" class="status-message"></p>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
