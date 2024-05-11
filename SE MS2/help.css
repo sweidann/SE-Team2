@@ -1,0 +1,9 @@
+#fileInput {
+  margin-right: 10px;
+  background-color: red;
+}
+#fileDisplayArea a {
+  margin-left: 10px;
+  color: blue;
+  text-decoration: underline;
+}

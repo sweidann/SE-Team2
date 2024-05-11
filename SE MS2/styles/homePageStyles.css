@@ -27,11 +27,11 @@ body {
   left: 50%;
   bottom: 0%;
   width: 50%;
-  height: 100%;
+  height: 108%;
   background-color: #8e65c0;
   background-image: radial-gradient(circle, white 1px, transparent 2px);
 
-  background-size: 40px 40px;
+  background-size: 45px 45px;
   background-position: 50% 0;
   background-repeat: repeat;
 }
@@ -111,12 +111,13 @@ a:hover {
   align-items: center;
   justify-content: baseline;
   flex-direction: row;
+  height: 100%;
+  width: 30%;
 }
 
 .logo-img {
-  width: 20vw;
-  height: 20vh;
-  padding-top: 5vh;
+  width: 50%;
+  height: 100%;
 }
 
 .welcome-part {
@@ -199,7 +200,6 @@ a:hover {
 
 #about {
   height: 100vh;
-  
 }
 
 #activities {
@@ -320,7 +320,6 @@ textarea:focus {
   position: relative;
   display: flex;
   flex-direction: column;
- 
 }
 .dotted-middle {
   z-index: 1;
@@ -339,29 +338,29 @@ textarea:focus {
   display: flex;
   flex-direction: column;
 }
-.donators-img{
+.donators-img {
   position: absolute;
-  top:2vh;
+  top: 2vh;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-.food-img{
+.food-img {
   position: absolute;
-  top:35vh;
-  left:20vh;
+  top: 35vh;
+  left: 20vh;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-.teaching-img{
-  height:200px;
-  width:300px;
+.teaching-img {
+  height: 200px;
+  width: 300px;
   position: absolute;
-  top:65vh;
-  left:60vh;
+  top: 65vh;
+  left: 60vh;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-.info-text{
+.info-text {
   position: absolute;
-  left:50%;
-  bottom:0;
+  left: 50%;
+  bottom: 0;
   width: 50%;
   height: 100%;
   z-index: 1;
@@ -370,24 +369,24 @@ textarea:focus {
   align-items: right;
   justify-content: center;
 }
-.title-abt{
+.title-abt {
   position: absolute;
   z-index: 1;
   font-size: 2.5em;
-  top:5vh;
-  right:30vh;
+  top: 5vh;
+  right: 30vh;
   font-weight: lighter;
   color: aliceblue;
 }
-.description{
+.description {
   position: absolute;
   z-index: 1;
-  right:0%;
+  right: 0%;
   text-align: right; /* Align text to the right */
   color: aliceblue; /* Set text color to alicewhite */
   line-height: 1.5;
   font-weight: lighter;
 }
-h2{
+h2 {
   line-height: 3em;
 }
