@@ -152,6 +152,26 @@ button {
   gap: 2.5vh;
 }
 
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  display: inline-block;
+  width: 20px; /* Adjust the width and height as needed */
+  height: 20px; /* Adjust the width and height as needed */
+  border: 2px solid white; /* Border color */
+  border-radius: 0; /* Remove border radius to make it square */
+  margin-right: 5px; /* Adjust spacing between radio button and label */
+  vertical-align: middle; /* Align vertically with the label */
+}
+
+/* Optional: Style the radio button when it's checked */
+input[type="radio"]:checked {
+  background-color: white; /* Change background color when checked */
+}
+
 .cat-name {
   font-size: 1.4em;
 }

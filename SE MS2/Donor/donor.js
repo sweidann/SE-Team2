@@ -1421,3 +1421,43 @@ function accountButton() {
 }
 
 accountButton();
+
+let ageValue = "";
+const radioButtons = document.querySelectorAll(
+  'input[type="radio"][name="age"]'
+);
+
+// Add change event listener to each radio button
+radioButtons.forEach((radioButton) => {
+  radioButton.addEventListener("change", () => {
+    if (radioButton.checked) {
+      ageValue = radioButton.value;
+    }
+  });
+});
+
+const genderRadios = document.querySelectorAll(
+  'input[type="radio"][name="gender"]'
+);
+let genderValue = "";
+// Add change event listener to each gender radio button
+genderRadios.forEach((radio) => {
+  radio.addEventListener("change", () => {
+    if (radio.checked) {
+      genderValue = radio.value;
+    }
+  });
+});
+
+const seasonRadios = document.querySelectorAll(
+  'input[type="radio"][name="season"]'
+);
+let seasonValue = "";
+// Add change event listener to each season radio button
+seasonRadios.forEach((radio) => {
+  radio.addEventListener("change", () => {
+    if (radio.checked) {
+      seasonValue = radio.value;
+    }
+  });
+});
