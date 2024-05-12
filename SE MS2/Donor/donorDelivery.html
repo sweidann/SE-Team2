@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Heavenly</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../styles/donorPageStyles.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./donorDelivery.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+  </head>
+  <body>
+    <div class="upper">
+      <div class="working">
+        <div class="titles-div">
+          <div class="logo-div">
+            <a href="../Donor/donor.html"><button class="back-button">Back</button></a>
+            <img src="../media/logo2.png" alt="" class="logo-img" />
+          </div>
+          <div class="title-div">Donations</div>
+          <div class="account-div">
+            <button class="account-button">N</button>
+            <div class="options-box">
+              <div class="acc-button">Account</div>
+              <div class="delv-button">Delivery</div>
+              <div class="logout-btn">Logout</div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="middle-div">
+      <div class="lower">
+       
+        <div id="postsarea"></div>
+      </div>
+      <div class="noti-div">
+        <div class="title-noti">
+          <div class="title-noti-div">Notifications</div>
+        </div>
+        <div class="notifications" id="notify">
+          <div class="notification">
+            <img src="../media/x icon.png" />
+            <button class="modal-button" data-modal-id="modal1">View ETA</button>
+            <p>PickUp confirmed</p>
+          </div>
+          <div class="notification">
+            <img src="../media/x icon.png" />
+            <p>Driver Has Arrived!!</p>
+          </div>
+          
+        </div>
+      </div>
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Estimated Time of Arrival: 10 minutes</p>
+        </div>
+    </div>
+    
+    </div>
+    <script type="module" src="../Donor/donorDelivery.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  </body>
+</html>

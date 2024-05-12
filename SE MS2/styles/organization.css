@@ -847,6 +847,23 @@ file-upload-container {
   margin-bottom: 2vh;
 }
 
+.back-button{
+  position: absolute; /* Position the button absolutely */
+  top: 20px; /* Adjust the distance from the top */
+  left: 50px;
+  height: 50px;
+  width: 50px;
+  font-size: 10px;
+  border-radius: 50px;
+  background-color: #00cab6;
+  border: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  color: aliceblue;
+  left: 0%;
+ cursor: pointer;
+}
+
 .edit-btn {
   height: 100%;
   display: flex;

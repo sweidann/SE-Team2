@@ -76,3 +76,14 @@ export const currentDonor = {
   area: "New Cairo",
   governorate: "Cairo",
 };
+export const currentUser={
+  type: "Doctor",
+  firstName: "Omar",
+  lastName: "Ali",
+  gender: "male",
+  email: "omarali@gmail.com",
+  contactNumber: "12345",
+  password: "Omar123",
+  area: "New Cairo",
+  governorate: "Cairo",
+}
