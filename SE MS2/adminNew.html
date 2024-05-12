@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles/adminNew.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="left-part">
+        <div class="logo-div">  <img src="../SE MS2/media/logo2.png" alt="" class="logo-img" /></div>
+        <div class="cats-div"> 
+            <div class="button-list">
+              <div class="button-row">
+                <img src="../SE MS2/media/org icon.png" alt="Organization Icon" />
+                <button id="org">Organization</button>
+              </div>
+              <div class="button-row">
+                <img src="../SE MS2/media/volunteer icon.png" alt="volunteer Icon" />
+                <button id="volunteer">Volunteers</button>
+              </div>
+              <div class="button-row">
+                <img src="../SE MS2/media/accounts icon.png" alt="accounts Icon" />
+                <button id="acc">Edit Account</button>
+              </div>
+              <div class="button-row">
+                <img src="../SE MS2/media/settings icon.png" alt="settings Icon" />
+                <button id="settings">Settings</button>
+              </div>
+             
+            </div></div>
+    </div>
+    <div class="right-part">
+        <div class="upper-right-part">
+            <div class="title-div">
+                Dashboard
+            </div>
+            <div class="profile-div"> <button class="account-button">N</button></div>
+        </div>
+        <div class="lower-right-part">
+            <div class="first-half">
+                <label for="orgsize">Organizations:</label>
+                <input type="text" id="orgsize" readonly>
+                <label for="donorsize">Donors:</label>
+                <input type="text" id="donorsize" readonly>
+            </div>
+            <div class="second-half">
+                <label for="total">Total Accounts:</label>
+                <input type="text" id="total" readonly>
+            </div>
+
+        </div>
+    </div>
+    <script type="module" src="../SE MS2/javaScript/adminNew.js"></script>
+</body>
+</html>
