@@ -3,6 +3,10 @@
   <head>
     <title>Heavenly</title>
     <link rel="stylesheet" type="text/css" href="../styles/organization.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
   </head>
 
   <body>
@@ -61,184 +65,18 @@
             <option value="Medical Supplies">Medical Supplies</option>
             <option value="School Supplies">School Supplies</option>
             <option value="Blood Donations">Blood Donations</option>
+            <option value="Teaching">Teaching</option>
+            <option value="Medical">Medical</option>
           </select>
         </div>
-        <div class="pop-up-content"></div>
-        <div class="post-now-button" id="postnow">
-          <button>Post</button>
-        </div>
+        <form class="pop-up-content"></form>
       </div>
-      <textarea
-        placeholder="Enter name"
-        id="name"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter type"
-        id="Toytype"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter use"
-        id="Medicaluse"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter bloodtype"
-        id="bloodtype"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter patient name"
-        id="Patientname"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter RHtype"
-        id="RHtype"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter hospital name"
-        id="hospitalName"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter hospital area"
-        id="hospitalArea"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter hospital goverorate"
-        id="hospitalGov"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter hospital address"
-        id="hospitalAdd"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter author name"
-        id="author"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter language"
-        id="language"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter edition"
-        id="edition"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter summary"
-        id="summary"
-        style="display: none"
-      ></textarea>
-      <textarea
-        placeholder="Enter color"
-        id="color"
-        style="display: none"
-      ></textarea>
-
-      <select id="gender" class=".post-window" style="display: none">
-        <option value="" disabled selected>Gender</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Unisex">Unisex</option>
-      </select>
-      <select id="school" class=".post-window" style="display: none">
-        <option value="" disabled selected>Choose</option>
-        <option value="Stationary">Stationary</option>
-        <option value="Book">Book</option>
-      </select>
-      <select id="season" class=".post-window" style="display: none">
-        <option value="" disabled selected>Season</option>
-        <option value="Spring">Spring</option>
-        <option value="Summer">Summer</option>
-        <option value="Autumn">Autumn</option>
-        <option value="Winter">Winter</option>
-        <option value="All">All</option>
-      </select>
-      <select id="category" class=".post-window" style="display: none">
-        <option value="" disabled selected>Category</option>
-        <option value="Eductaional">Eductaional</option>
-        <option value="Electronic">Electronic</option>
-      </select>
-      <select id="Clothesage" class=".post-window" style="display: none">
-        <option value="" disabled selected>Age</option>
-        <option value="18+">18+</option>
-        <option value="20+">20+</option>
-        <option value="25+">25+</option>
-        <option value="30+">30+</option>
-        <option value="All">All</option>
-      </select>
-      <select id="Toysage" class=".post-window" style="display: none">
-        <option value="" disabled selected>Age</option>
-        <option value="3+">3+</option>
-        <option value="4+">4+</option>
-        <option value="5+">5+</option>
-        <option value="6+">6+</option>
-        <option value="7+">7+</option>
-        <option value="8+">8+</option>
-        <option value="9+">9+/option></option>
-        <option value="10+">10+</option>
-        <option value="All">All</option>
-      </select>
-      <select id="type" class=".post-window" style="display: none">
-        <option value="" disabled selected>Type</option>
-        <option value="Casual">Casual</option>
-        <option value="Formal">Formal</option>
-        <option value="Sports">Sport</option>
-      </select>
-      <select id="material" class=".post-window" style="display: none">
-        <option value="" disabled selected>Material</option>
-        <option value="Cotton">Cotton</option>
-        <option value="Polyester">Polyester</option>
-        <option value="Wool">Wool</option>
-        <option value="Silk">Silk</option>
-        <option value="Leather">Leather</option>
-        <option value="Synthetic">Synthetic</option>
-        <option value="Satin">Satin</option>
-      </select>
-      <textarea
-        placeholder="Enter amount"
-        id="amount"
-        style="display: none"
-      ></textarea>
     </div>
 
     <div class="right-part">
       <div class="volunteers-list-div">
         <div class="volunteers-list">
           <div class="title-vol">Volunteers</div>
-          <div class="volunteer">
-            <img src="../media/donor.png" />
-            Mostafa Ashraf
-          </div>
-          <div class="volunteer">
-            <img src="../media/man.png" />
-            Mohammed Sweidan
-          </div>
-          <div class="volunteer">
-            <img src="../media/donor.png" />
-            Ali Maghawry
-          </div>
-          <div class="volunteer">
-            <img src="../media/man.png" />
-            Ahmed Safwat
-          </div>
-          <div class="volunteer">
-            <img src="../media/donor.png" />
-            Abdelrahman Mokhtar
-          </div>
-          <div class="volunteer">
-            <img src="../media/man.png" />
-            Farah Hisham
-          </div>
         </div>
       </div>
 
@@ -272,5 +110,6 @@
     </div>
 
     <script type="module" src="../scripts/organization.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </body>
 </html>

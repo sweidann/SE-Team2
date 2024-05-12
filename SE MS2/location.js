@@ -1,43 +1,51 @@
-// Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Listener for 'myButton' to process multiple inputs
-    const myButton = document.getElementById('myButton');
-    myButton.addEventListener('click', function() {
-        let inputsArray = [];
-        let allFilled = true;
+import { thisOrg } from "./data/orgData.js";
 
-        // Check if all inputs are filled
-        for (let i = 1; i <= 6; i++) {
-            let input = document.getElementById(`input${i}`);
-            if (input.value === "") {
-                allFilled = false;
-                break; // Stop checking as soon as an empty input is found
-            }
-        }
+const app = document.getElementById("app");
 
-        // If all inputs are filled, process them
-        if (allFilled) {
-            for (let i = 1; i <= 6; i++) {
-                let input = document.getElementById(`input${i}`);
-                inputsArray.push(input.value);
-            }
-            console.log(inputsArray); // Output the array to the console
-            alert("You have added your address successfully");
-        } else {
-            alert("Please fill all the inputs.");
-        }
-    });
+let html = "";
+html += `<form>`;
+Object.keys(thisOrg).forEach((key) => {
+  if (key !== "id") {
+    html += `
+                    <label for="${key}">${formatKey(key)}:</label>
+                    <input type="text" id="${key}" name="${key}" value="${
+      thisOrg[key]
+    }" readonly>
+                    <button type="button" class="edit-btn">Edit</button>
+                    <br>
+                `;
+  }
+});
+html += `</form>`;
+app.innerHTML += html;
 
-    // Listener for 'submitButton' to process numeric input
-    const submitButton = document.getElementById('submitButton');
-    submitButton.addEventListener('click', function() {
-        let numericInput = document.getElementById('numericInput');
-        let value = numericInput.value;
+function formatKey(key) {
+  const keyMap = {
+    id: "ID",
+    firstName: "Firs Name",
+    lastName: "Last Name ",
+    gender: "Gender",
+    email: "Email",
+    password: "Password",
+    contactNumber: "Contact NUmber",
+    organizationName: "Organization Name",
+    organizationType: "Organization Type",
+    organizationAddress: "Organization Address",
+    organizationArea: "Organization Area",
+    organizationGovernorate: "Organization Governorate",
 
-        if (value === '') {
-            alert('Please enter a number.');
-        } else {
-            alert('Thank you for entering the number: ' + value);
-        }
-    });
+    documents: "Documents",
+  };
+
+  return keyMap[key] || key; // Return the mapped key name, or the key itself if not found
+}
+
+const editButtons = document.querySelectorAll(".edit-btn");
+editButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const input = button.previousElementSibling;
+    input.readOnly = !input.readOnly;
+    input.focus();
+    button.textContent = input.readOnly ? "Edit" : "Save";
+  });
 });

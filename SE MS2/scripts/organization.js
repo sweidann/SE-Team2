@@ -1,12 +1,6 @@
-import {
-  clothesPosts,
-  toysPosts,
-  foodPosts,
-  medicalPosts,
-  stationaryPosts,
-  bookPosts,
-  bloodPosts,
-} from "../data/posts.js";
+import { orgPosts, orgVolunteers, thisOrg } from "../data/orgData.js";
+
+let selectedDateTime = "";
 
 document.addEventListener("DOMContentLoaded", function () {
   const buttonsRows = document.querySelectorAll(".button-row");
@@ -15,6 +9,209 @@ document.addEventListener("DOMContentLoaded", function () {
   const xbutt = document.getElementById("closepop");
   const notifications = document.querySelectorAll(".notification");
   const volunteers = document.querySelectorAll(".volunteer");
+
+  function detailsButton() {
+    document.querySelectorAll(".details-button").forEach((button) => {
+      button.addEventListener("click", function () {
+        var productId = this.closest(".post-div").getAttribute("data-post-id");
+        let post = orgPosts.find((post) => post.id == productId);
+        let html = Object.entries(post)
+          .filter(
+            ([key, value]) =>
+              key !== "image" && key !== "id" && key !== "postType"
+          ) // Exclude the 'image' key
+          .map(
+            ([key, value]) => `
+          <div class="productDetail">
+              <p>${key}: ${value}</p>
+          </div>
+        `
+          )
+          .join("");
+
+        var modal = document.getElementById("productModal");
+        var details = document.querySelector(".productDetails");
+
+        // Simulate fetching product details
+        details.innerHTML = html;
+        // In a real scenario, you might fetch this data from a server
+
+        modal.style.display = "flex";
+      });
+    });
+
+    // Get the <span> element that closes the modal
+    var closeButton = document.querySelector(".close-button");
+
+    // When the user clicks on <span> (x), close the modal
+    closeButton.onclick = function () {
+      var modal = document.getElementById("productModal");
+      modal.style.display = "none";
+    };
+
+    // Optional: close the modal if someone clicks outside of it
+    window.onclick = function (event) {
+      document.querySelectorAll(".modal").forEach(function (modal) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    };
+  }
+
+  function loadPosts() {
+    let postshtml = "";
+    orgPosts.forEach((post) => {
+      postshtml += `<div class="post-div" data-post-id="${post.id}" id = "clothes">
+        <div class="post-pic-div">
+        <img
+        src="../${post.image}"
+        alt=""
+        class="product-pic"
+        />
+        </div>
+        <div class="details-div">
+        <div class="item-name-details"><div class = "item-name-text">${post.Name}</div><div class = "three-dots-posts">...</div>
+        <div class="options-box">
+              <button class="update-btn">Update</button>
+              <button class="delete-btn">Delete</button>
+          </div>
+          </div>
+        <div class="org-posting">${post.Organization}</div>
+        <div class="buttons-div">
+        <button class="details-button">View Details</button>
+        <div id="productModal" class="modal">
+          <div class="modal-content">
+            <span class="close-button">×</span>
+            <h1>Post Details</h1>
+            <div class="productDetails"></div>
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>`;
+    });
+    return postshtml;
+  }
+
+  function loadFulfilledPosts() {
+    let postshtml = "";
+    orgPosts
+      .filter((post) => post.status === "fulfilled")
+      .forEach((post) => {
+        postshtml += `<div class="post-div" data-post-id="${post.id}" id = "clothes">
+        <div class="post-pic-div">
+        <img
+        src="../${post.image}"
+        alt=""
+        class="product-pic"
+        />
+        </div>
+        <div class="details-div">
+        <div class="item-name-details"><div class = "item-name-text">${post.Name}</div><div class = "three-dots-posts">...</div>
+        <div class="options-box">
+              <button class="delete-btn">Delete</button>
+          </div>
+          </div>
+        <div class="org-posting">${post.Organization}</div>
+        <div class="buttons-div">
+        <button class="details-button">View Details</button>
+        <div id="productModal" class="modal">
+          <div class="modal-content">
+            <span class="close-button">×</span>
+            <h1>Post Details</h1>
+            <div class="productDetails"></div>
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>`;
+      });
+    return postshtml;
+  }
+
+  function threeDotsPosts() {
+    document.querySelectorAll(".three-dots-posts").forEach((button) => {
+      button.addEventListener("click", function () {
+        if (button.nextElementSibling.style.display === "flex")
+          button.nextElementSibling.style.display = "none";
+        else {
+          button.nextElementSibling.style.display = "flex";
+        }
+      });
+    });
+  }
+
+  let postshtml = `<div class="title">Posts</div>`;
+  postshtml += loadPosts();
+  document.getElementById("postsarea").innerHTML = postshtml;
+  detailsButton();
+  threeDotsPosts();
+  deleteButtons();
+
+  function deleteButtons() {
+    document.querySelectorAll(".delete-btn").forEach((button) => {
+      button.addEventListener("click", function () {
+        var productId = this.closest(".post-div").getAttribute("data-post-id");
+        let post = orgPosts.find((post) => post.id == productId);
+        let idToRemove = post.id;
+
+        const indexToRemove = orgPosts.findIndex(
+          (post) => post.id === idToRemove
+        );
+        if (indexToRemove !== -1) {
+          orgPosts.splice(indexToRemove, 1);
+        } else {
+          console.log(
+            "Object with the specified id does not exist in the array."
+          );
+        }
+        let postshtml = `<div class="title">Posts</div>`;
+        postshtml += loadPosts();
+        document.getElementById("postsarea").innerHTML = postshtml;
+        detailsButton();
+        threeDotsPosts();
+        deleteButtons();
+      });
+    });
+  }
+
+  function deleteFulfilledButtons() {
+    document.querySelectorAll(".delete-btn").forEach((button) => {
+      button.addEventListener("click", function () {
+        var productId = this.closest(".post-div").getAttribute("data-post-id");
+        let post = orgPosts.find((post) => post.id == productId);
+        if (post.status === "fulfilled") {
+          let idToRemove = post.id;
+
+          const indexToRemove = orgPosts.findIndex(
+            (post) => post.id === idToRemove
+          );
+          if (indexToRemove !== -1) {
+            orgPosts.splice(indexToRemove, 1);
+          } else {
+            console.log(
+              "Object with the specified id does not exist in the array."
+            );
+          }
+          let fulfilledhtml = `<div class="title-fulfilled">Fulfilled</div>`;
+          fulfilledhtml += loadFulfilledPosts();
+          document.getElementById("postsarea").innerHTML = fulfilledhtml;
+          detailsButton();
+          threeDotsPosts();
+          deleteFulfilledButtons();
+        }
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const optionsBtns = document.querySelectorAll(".options-btn");
+
+    optionsBtns.forEach(function (btn) {
+      btn.addEventListener("blur", function () {});
+    });
+  });
 
   buttonsRows.forEach((buttonRow) => {
     buttonRow.addEventListener("click", function () {
@@ -25,9 +222,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       switch (buttonText) {
         case "posts":
-          document.getElementById(
-            "postsarea"
-          ).innerHTML = `<div class="title">Posts</div>`;
+          let postshtml = `<div class="title">Posts</div>`;
+          postshtml += loadPosts();
+          document.getElementById("postsarea").innerHTML = postshtml;
+          detailsButton();
+          threeDotsPosts();
+          deleteButtons();
           break;
         case "documents":
           document.getElementById("postsarea").innerHTML = `<div class="box">
@@ -108,16 +308,57 @@ document.addEventListener("DOMContentLoaded", function () {
           //show documents upload area
           break;
         case "location":
-          document.getElementById("postsarea").style.display = "none";
+          document.getElementById(
+            "postsarea"
+          ).innerHTML = `<div class="loc-box">
+          <div id="Locationword">Location</div>
+          <div class="loc">
+            <div id="Address">Add Address</div>
+            <div id="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d102976.46587300031!2d31.508904767219747!3d30.033129122439746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1715109132769!5m2!1sen!2seg"
+                width="100%"
+                height="100%"
+                style="border-radius: 20px"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+          <div class="add-button">
+        <button id="myButton" onclick="addEventListener()">Add</button>
+      </div>`;
           //show location area
           break;
         case "pickup time":
-          document.getElementById("postsarea").style.display = "none";
-          //show pickup time
+          let timehtml = `<div class="title-fulfilled">Pickup Time</div>`;
+          timehtml += `
+          <div class = "date-div">
+          <form class = "calendar-form">
+          <label class="choose-date">Choose Date </label>
+            <input
+              class="date-selector"
+              type="datetime-local"
+              placeholder="Select DateTime"
+            />
+            <button class ="submit-time">Submit</button>
+          </form>
+          
+          </div>
+          
+           `;
+          document.getElementById("postsarea").innerHTML = timehtml;
+          loadFlat();
+          assignSubmitTime();
           break;
         case "fulfilled":
-          document.getElementById("postsarea").style.display = "none";
-          //show fulfilled
+          let fulfilledhtml = `<div class="title-fulfilled">Fulfilled</div>`;
+          fulfilledhtml += loadFulfilledPosts();
+          document.getElementById("postsarea").innerHTML = fulfilledhtml;
+          detailsButton();
+          threeDotsPosts();
+          deleteFulfilledButtons();
           break;
         default:
           console.log("Button action not defined");
@@ -125,8 +366,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  function assignSubmitTime() {
+    document
+      .querySelector(".submit-time")
+      .addEventListener("click", function () {
+        submitTime();
+      });
+  }
+
+  function submitTime() {
+    document.getElementById(
+      "postsarea"
+    ).innerHTML += `<h2>Pickup Time set to ${selectedDateTime}</h2>`;
+  }
+
   postButton.addEventListener("click", function () {
-    document.getElementById("postpopup").style.display = "block";
+    document.getElementById("postpopup").style.display = "flex";
   });
 
   xbutt.addEventListener("click", function () {
@@ -150,75 +405,54 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  function loadFlat() {
+    const datetimeInput = document.querySelector(".date-selector");
+
+    // Initialize Flatpickr
+    flatpickr(datetimeInput, {
+      enableTime: true,
+      dateFormat: "Y-m-dTH:i",
+      time_24hr: true, // If you want 24-hour format
+      onChange: function (selectedDates, dateStr, instance) {
+        // When the value changes, log it to the console
+        console.log("Selected date and time:", dateStr);
+
+        // You can store the value in a variable or send it to a server for further processing
+        // For example:
+        selectedDateTime = dateStr;
+        // You can now use selectedDateTime variable to access the selected value
+      },
+    });
+  }
+
   document.getElementById("dropdown").addEventListener("change", function () {
     var category = this.value;
-    let selects = document.querySelector(".selects");
 
-    var clothesElements = document.querySelectorAll(
-      ".post-window #name, .post-window #gender, .post-window #season, .post-window #Clothesage, .post-window #type, .post-window #material, .post-window #amount, .post-window #color"
-    );
-    var toysElements = document.querySelectorAll(
-      ".post-window #Toytype, .post-window #gender, .post-window #Toysage, .post-window #category, .post-window #amount"
-    );
-    var foodElements = document.querySelectorAll(
-      ".post-window #name, .post-window #Toytype, .post-window #amount"
-    );
-    var medicalElements = document.querySelectorAll(
-      ".post-window #Medicaluse, .post-window #Toytype, .post-window #amount"
-    );
-    var stationaryElements = document.querySelectorAll(
-      ".post-window #school, .post-window #Toytype, .post-window #amount"
-    );
-    var bookElements = document.querySelectorAll(
-      ".post-window #school, .post-window #name, .post-window #summary, .post-window #author, .post-window #language, .post-window #edition, .post-window #amount"
-    );
-    var bloodElements = document.querySelectorAll(
-      ".post-window #bloodtype, .post-window #Patientname, .post-window #RHtype, .post-window #hospitalName, .post-window #hospitalArea, .post-window #hospitalGov, .post-window #hospitalAdd"
-    );
-    var fileUpload = document.getElementById("imageUploading");
-    var statOrbook = document.getElementById("school");
     let content = document.querySelector(".pop-up-content");
     switch (category) {
       case "Clothes":
-        // toysElements.forEach(function (element) {
-        //   element.style.display = "none";
-        // });
-        // foodElements.forEach(function (element) {
-        //   element.style.display = "none";
-        // });
-        // medicalElements.forEach(function (element) {
-        //   element.style.display = "none";
-        // });
-        // bloodElements.forEach(function (element) {
-        //   element.style.display = "none";
-        // });
-        // stationaryElements.forEach(function (element) {
-        //   element.style.display = "none";
-        // });
-        // bookElements.forEach(function (element) {
-        //   element.style.display = "none";
-        // });
-        // clothesElements.forEach(function (element) {
-        content.innerHTML = `<textarea
+        content.innerHTML = `
+        <div class = "inside-pop-up">
+        <textarea
             placeholder="Enter name"
             id="name"
-            
+            required
             ></textarea>
 
         <textarea
           placeholder="Enter color"
           id="color"
-          
+          required
         ></textarea>
 
-<select id="gender" class=".post-window" >
+<select id="gender" required>
           <option value="" disabled selected>Gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Unisex">Unisex</option>
         </select>
 
-<select id="season" class=".post-window" >
+<select id="season"  required>
           <option value="" disabled selected>Season</option>
           <option value="Spring">Spring</option>
           <option value="Summer">Summer</option>
@@ -227,7 +461,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <option value="All">All</option>
         </select>
 
-<select id="Clothesage" class=".post-window" >
+<select id="Clothesage" required>
           <option value="" disabled selected>Age</option>
           <option value="18+">18+</option>
           <option value="20+">20+</option>
@@ -236,14 +470,14 @@ document.addEventListener("DOMContentLoaded", function () {
           <option value="All">All</option>
         </select>
 
-<select id="type" class=".post-window" >
+<select id="type"  required>
           <option value="" disabled selected>Type</option>
           <option value="Casual">Casual</option>
           <option value="Formal">Formal</option>
           <option value="Sports">Sport</option>
         </select>
 
-      <select id="material" class=".post-window" >
+      <select id="material" required>
           <option value="" disabled selected>Material</option>
           <option value="Cotton">Cotton</option>
           <option value="Polyester">Polyester</option>
@@ -257,266 +491,559 @@ document.addEventListener("DOMContentLoaded", function () {
       <textarea
           placeholder="Enter amount"
           id="amount"
-          
+          required
         ></textarea>
 
         <div
           class="file-upload-container"
           
-          id="imageUploading"
+          id="imageUploading" required
         >
-          <input type="file" id="imageUpload" accept="image/*" />
-          <label for="imageUpload">Upload Image</label>
-        </div>`;
-        // });
+          <input type="file" id="imageUpload" required/>
+          <label class ="upload-text" for="imageUpload">Upload Image</label>
+        </div>
+        </div>
+        <div class="post-now-button" id="postnow">
+          <button>Post</button>
+        </div>
+        `;
+        postNowButtons();
         break;
       case "Toys":
-        clothesElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        foodElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        medicalElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        bloodElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        stationaryElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        bookElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        toysElements.forEach(function (element) {
-          element.style.display = "inline";
-        });
-        fileUpload.style.display = "block";
+        content.innerHTML = `
+        <div class = "inside-pop-up">
+        <textarea
+        placeholder="Enter type"
+        id="Toytype"
+           ></textarea>
+
+<select id="Toysage"  >
+        <option value="" disabled selected>Age</option>
+        <option value="3+">3+</option>
+        <option value="4+">4+</option>
+        <option value="5+">5+</option>
+        <option value="6+">6+</option>
+        <option value="7+">7+</option>
+        <option value="8+">8+</option>
+        <option value="9+">9+/option></option>
+        <option value="10+">10+</option>
+        <option value="All">All</option>
+      </select>
+
+<select id="gender"  >
+        <option value="" disabled selected>Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Unisex">Unisex</option>
+      </select>
+
+<select id="category"  >
+        <option value="" disabled selected>Category</option>
+        <option value="Eductaional">Eductaional</option>
+        <option value="Electronic">Board Game</option>
+        <option value="Electronic">Electronic</option>
+      </select>
+
+<textarea
+        placeholder="Enter amount"
+        id="amount"
+              ></textarea>
+
+        <div
+          class="file-upload-container"
+          
+          id="imageUploading" required
+        >
+          <input type="file" id="imageUpload" required/>
+          <label class ="upload-text" for="imageUpload">Upload Image</label>
+        </div>
+        </div>
+        <div class="post-now-button" id="postnow">
+          <button>Post</button>
+        </div>
+        `;
+        postNowButtons();
         break;
       case "Food":
-        clothesElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        toysElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        medicalElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        bloodElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        stationaryElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        bookElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        foodElements.forEach(function (element) {
-          element.style.display = "inline";
-        });
-        fileUpload.style.display = "block";
+        content.innerHTML = `
+        <div class = "inside-pop-up">
+        <textarea
+        placeholder="Enter name"
+        id="name"
+        
+      ></textarea>
+
+      <textarea
+        placeholder="Enter type"
+        id="Toytype"
+       
+      ></textarea>
+
+      <textarea
+        placeholder="Enter amount"
+        id="amount"
+      ></textarea>
+
+        <div
+          class="file-upload-container"
+          
+          id="imageUploading" required
+        >
+          <input type="file" id="imageUpload" required/>
+          <label class ="upload-text" for="imageUpload">Upload Image</label>
+        </div>
+        </div>
+        <div class="post-now-button" id="postnow">
+          <button >Post</button>
+        </div>
+        `;
+        postNowButtons();
         break;
       case "Medical Supplies":
-        clothesElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        toysElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        foodElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        bloodElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        stationaryElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        bookElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        medicalElements.forEach(function (element) {
-          element.style.display = "inline";
-        });
-        fileUpload.style.display = "block";
+        content.innerHTML = `
+        <div class = "inside-pop-up">
+        <textarea
+        placeholder="Enter use"
+        id="Medicaluse"
+         ></textarea>
+
+<textarea
+        placeholder="Enter type"
+        id="Toytype"
+        
+      ></textarea>
+
+<textarea
+        placeholder="Enter amount"
+        id="amount"
+        
+      ></textarea>
+
+        <div
+          class="file-upload-container"
+          
+          id="imageUploading" required
+        >
+          <input type="file" id="imageUpload" required/>
+          <label class ="upload-text" for="imageUpload">Upload Image</label>
+        </div>
+        </div>
+        <div class="post-now-button" id="postnow">
+          <button >Post</button>
+        </div>
+        `;
+        postNowButtons();
         break;
       case "School Supplies":
-        clothesElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        toysElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        foodElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        bloodElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        medicalElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        statOrbook.style.display = "inline";
+        content.innerHTML = `<select id="school">
+        <option value="" disabled selected>Choose</option>
+        <option value="Stationary">Stationary</option>
+        <option value="Book">Book</option>
+      </select>`;
+        var statOrbook = document.getElementById("school");
         statOrbook.addEventListener("change", function () {
           if (statOrbook.value == "Stationary") {
-            bookElements.forEach(function (element) {
-              element.style.display = "none";
-            });
-            stationaryElements.forEach(function (element) {
-              element.style.display = "inline";
-            });
+            content.innerHTML = `
+            <div class = "inside-pop-up">
+            <textarea
+            placeholder="Enter use"
+            id="Medicaluse"
+             ></textarea>
+    
+             <textarea
+             placeholder="Enter type"
+             id="Toytype"
+             
+           ></textarea>
+     
+      <textarea
+             placeholder="Enter amount"
+             id="amount"
+             
+           ></textarea>
+     
+    
+            <div
+              class="file-upload-container"
+              
+              id="imageUploading" required
+            >
+              <input type="file" id="imageUpload" required/>
+              <label class ="upload-text" for="imageUpload">Upload Image</label>
+            </div>
+            </div>
+            <div class="post-now-button" id="postnow">
+              <button>Post</button>
+            </div>
+            `;
           } else {
-            stationaryElements.forEach(function (element) {
-              element.style.display = "none";
-            });
-            bookElements.forEach(function (element) {
-              element.style.display = "inline";
-            });
+            content.innerHTML = `
+            <div class = "inside-pop-up">
+            <textarea
+        placeholder="Enter name"
+        id="name"
+      ></textarea>
+<textarea
+        placeholder="Enter author name"
+        id="author"
+        
+      ></textarea>
+<textarea
+        placeholder="Enter language"
+        id="language"
+        
+      ></textarea>
+
+<textarea
+        placeholder="Enter edition"
+        id="edition"
+        
+      ></textarea>
+<textarea
+        placeholder="Enter summary"
+        id="summary"
+        
+      ></textarea>
+
+<textarea
+        placeholder="Enter amount"
+        id="amount"
+        
+      ></textarea>
+
+            <div
+              class="file-upload-container"
+              
+              id="imageUploading" required
+            >
+              <input type="file" id="imageUpload" required/>
+              <label class ="upload-text" for="imageUpload">Upload Image</label>
+            </div>
+            </div>
+            <div class="post-now-button" id="postnow">
+              <button>Post</button>
+            </div>
+            `;
           }
         });
-        fileUpload.style.display = "block";
+        postNowButtons();
         break;
       case "Blood Donations":
-        clothesElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        toysElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        foodElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        medicalElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        stationaryElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        bookElements.forEach(function (element) {
-          element.style.display = "none";
-        });
-        bloodElements.forEach(function (element) {
-          element.style.display = "inline";
-        });
-        fileUpload.style.display = "none";
+        content.innerHTML = `
+        <div class = "inside-pop-up">
+        <textarea
+        placeholder="Patient name"
+        id="Patientname"
+        
+      ></textarea>
+<select id="bloodtype" >
+        <option value="" disabled selected>Blood Type</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="AB">AB</option>
+        <option value="O">O</option>
+      </select>
+
+      <select id="RHtype" >
+        <option value="" disabled selected>RH Type</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+      </select>
+
+<textarea
+        placeholder="Enter hospital name"
+        id="hospitalName"
+        
+      ></textarea>
+      <textarea
+        placeholder="Enter hospital area"
+        id="hospitalArea"
+        
+      ></textarea>
+      <textarea
+        placeholder="Enter hospital goverorate"
+        id="hospitalGov"
+        
+      ></textarea>
+      <textarea
+        placeholder="Enter hospital address"
+        id="hospitalAdd"
+        
+      ></textarea>
+
+        <div class="post-now-button" id="postnow">
+          <button>Post</button>
+        </div>
+        `;
+        postNowButtons();
         break;
       default:
         break;
     }
   });
 
-  document.getElementById("postnow").addEventListener("click", function () {
-    var category = document.getElementById("dropdown").value;
+  function postNowButtons() {
+    document.getElementById("postnow").addEventListener("click", function () {
+      var category = document.getElementById("dropdown").value;
 
-    var content = {};
-    switch (category) {
-      case "Clothes":
-        content = {
-          id: 0,
-          Organization: "Resala",
-          Color: document.getElementById("color").value,
-          Category: "clothes",
-          Name: document.getElementById("name").value,
-          Gender: document.getElementById("gender").value,
-          Season: document.getElementById("season").value,
-          Age: document.getElementById("Clothesage").value,
-          Type: document.getElementById("type").value,
-          Material: document.getElementById("material").value,
-          Amount: document.getElementById("amount").value,
-          image: document.getElementById("imageUpload").value,
-        };
-        clothesPosts.push(content);
-        break;
-      case "Toys":
-        content = {
-          id: 0,
-          Organization: "Resala",
-          Type: document.getElementById("Toytype").value,
-          Gender: document.getElementById("gender").value,
-          Age: document.getElementById("Toysage").value,
-          Category: document.getElementById("category").value,
-          Amount: document.getElementById("amount").value,
-          image: document.getElementById("imageUpload").value,
-        };
-        toysPosts.push(content);
-        break;
-      case "Food":
-        content = {
-          id: 0,
-          Organization: "Resala",
-          Name: document.getElementById("name").value,
-          Type: document.getElementById("Toytype").value,
-          Amount: document.getElementById("amount").value,
-          image: document.getElementById("imageUpload").value,
-        };
-        foodPosts.push(content);
-        break;
-      case "Medical Supplies":
-        content = {
-          id: 0,
-          Organization: "Resala",
-          Usage: document.getElementById("Medicaluse").value,
-          deviceType: document.getElementById("Toytype").value,
-          Amount: document.getElementById("amount").value,
-          image: document.getElementById("imageUpload").value,
-        };
-        medicalPosts.push(content);
-        console.log(medicalPosts.length);
-        break;
-      case "School Supplies":
-        if (statOrbook.value == "Stationary") {
+      var content = {};
+      switch (category) {
+        case "Clothes":
           content = {
             id: 0,
             Organization: "Resala",
-            Type: document.getElementById("school").value,
+            Color: document.getElementById("color").value,
+            Category: "clothes",
+            Name: document.getElementById("name").value,
+            Gender: document.getElementById("gender").value,
+            Season: document.getElementById("season").value,
+            Age: document.getElementById("Clothesage").value,
+            Type: document.getElementById("type").value,
+            Material: document.getElementById("material").value,
             Amount: document.getElementById("amount").value,
             image: document.getElementById("imageUpload").value,
           };
-          stationaryPosts.push(content);
-        } else {
+          orgPosts.push(content);
+          console.log(content);
+          break;
+        case "Toys":
+          content = {
+            id: 0,
+            Organization: "Resala",
+            Type: document.getElementById("Toytype").value,
+            Gender: document.getElementById("gender").value,
+            Age: document.getElementById("Toysage").value,
+            Category: document.getElementById("category").value,
+            Amount: document.getElementById("amount").value,
+            image: document.getElementById("imageUpload").value,
+          };
+          orgPosts.push(content);
+          break;
+        case "Food":
           content = {
             id: 0,
             Organization: "Resala",
             Name: document.getElementById("name").value,
-            Type: document.getElementById("school").value,
+            Type: document.getElementById("Toytype").value,
             Amount: document.getElementById("amount").value,
-            Author: document.getElementById("author").value,
-            Language: document.getElementById("language").value,
-            Edition: document.getElementById("edition").value,
-            Summary: document.getElementById("summary").value,
             image: document.getElementById("imageUpload").value,
           };
-          bookPosts.push(content);
-        }
-        break;
-      case "Blood Donations":
-        content = {
-          id: 0,
-          Organization: "Resala",
-          bloodType: document.getElementById("bloodtype").value,
-          patientName: document.getElementById("Patientname").value,
-          RHType: document.getElementById("RHtype").value,
-          hospitalName: document.getElementById("hospitalName").value,
-          hospitalArea: document.getElementById("hospitalArea").value,
-          hospitalGovernorate: document.getElementById("hospitalGov").value,
-          hospitalAddress: document.getElementById("hospitalAdd").value,
-          Amount: document.getElementById("amount").value,
-        };
-        bloodPosts.push(content);
-        break;
-      default:
-        break;
+          orgPosts.push(content);
+          break;
+        case "Medical Supplies":
+          content = {
+            id: 0,
+            Organization: "Resala",
+            Usage: document.getElementById("Medicaluse").value,
+            deviceType: document.getElementById("Toytype").value,
+            Amount: document.getElementById("amount").value,
+            image: document.getElementById("imageUpload").value,
+          };
+          orgPosts.push(content);
+          console.log(medicalPosts.length);
+          break;
+        case "School Supplies":
+          if (statOrbook.value == "Stationary") {
+            content = {
+              id: 0,
+              Organization: "Resala",
+              Type: document.getElementById("school").value,
+              Amount: document.getElementById("amount").value,
+              image: document.getElementById("imageUpload").value,
+            };
+            orgPosts.push(content);
+          } else {
+            content = {
+              id: 0,
+              Organization: "Resala",
+              Name: document.getElementById("name").value,
+              Type: document.getElementById("school").value,
+              Amount: document.getElementById("amount").value,
+              Author: document.getElementById("author").value,
+              Language: document.getElementById("language").value,
+              Edition: document.getElementById("edition").value,
+              Summary: document.getElementById("summary").value,
+              image: document.getElementById("imageUpload").value,
+            };
+            orgPosts.push(content);
+          }
+          break;
+        case "Blood Donations":
+          content = {
+            id: 0,
+            Organization: "Resala",
+            bloodType: document.getElementById("bloodtype").value,
+            patientName: document.getElementById("Patientname").value,
+            RHType: document.getElementById("RHtype").value,
+            hospitalName: document.getElementById("hospitalName").value,
+            hospitalArea: document.getElementById("hospitalArea").value,
+            hospitalGovernorate: document.getElementById("hospitalGov").value,
+            hospitalAddress: document.getElementById("hospitalAdd").value,
+            Amount: document.getElementById("amount").value,
+          };
+          orgPosts.push(content);
+          break;
+        default:
+          break;
+      }
+
+      // document.getElementById("postpopup").style.display = "none";
+    });
+  }
+});
+
+function initializeVolunteers() {
+  let volhtml = "";
+  var vol = document.querySelector(".volunteers-list");
+  orgVolunteers.forEach(
+    (volunteer) =>
+      (volhtml += `
+  <div class="volunteer" data-post-id="${volunteer.id}">
+              <div id="volModal" class="modal">
+                <div class="modal-content">
+                <h1>Volunteer Details</h1>
+                <div class="volDetails"></div>
+                </div>
+              </div>
+            <div class="vol-initial">${volunteer.firstName.charAt(0)}</div>
+            <div class="vol-name">${volunteer.firstName} ${
+        volunteer.lastName
+      }</div>
+          </div>
+  </div>`)
+  );
+  vol.innerHTML += volhtml;
+  volunteerDetails();
+}
+
+function volunteerDetails() {
+  document.querySelectorAll(".volunteer").forEach((button) => {
+    button.addEventListener("click", function () {
+      var volID = button.getAttribute("data-post-id");
+      let vol = orgVolunteers.find((vol) => vol.id == volID);
+      let html = Object.entries(vol)
+        .filter(
+          ([key, value]) =>
+            key !== "image" && key !== "id" && key !== "password"
+        ) // Exclude the 'image' key
+        .map(
+          ([key, value]) => `
+        <div class="productDetail">
+            <p>${formatKeyVol(key)}: ${value}</p>
+        </div>
+      `
+        )
+        .join(""); // Use map to create HTML and join to make a single string
+
+      var modal = document.getElementById("volModal");
+      var details = document.querySelector(".volDetails");
+
+      // Simulate fetching product details
+      details.innerHTML = html;
+      // In a real scenario, you might fetch this data from a server
+
+      modal.style.display = "flex";
+    });
+
+    function formatKeyVol(key) {
+      const keyMap = {
+        id: "id",
+        type: "Type",
+        firstName: "First Name",
+        lastName: "Last Name",
+        gender: "Gender",
+        email: "Email",
+        contactNumber: "Contact Number",
+        password: "Password",
+        area: "Area",
+        governorate: "Governorate",
+      };
+
+      return keyMap[key] || key; // Return the mapped key name, or the key itself if not found
     }
 
-    document.getElementById("postpopup").style.display = "none";
-  });
+    // Get the <span> element that closes the modal
+    var closeButton = document.querySelector(".close-button-vol");
 
-  //   document.getElementById("logout").addEventListener("click", function () {
-  //     window.location.href = "http://127.0.0.1:5500/SE%20MS2/hompage.html";
-  //   });
-});
+    // When the user clicks on <span> (x), close the modal
+
+    // Optional: close the modal if someone clicks outside of it
+    window.onclick = function (event) {
+      document.querySelectorAll(".modal").forEach(function (modal) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    };
+  });
+}
+
+initializeVolunteers();
+assignOpenProfile();
+
+function assignOpenProfile() {
+  const orgDetails = document.querySelector(".organization-details");
+
+  orgDetails.addEventListener("click", function () {
+    profileOpen();
+  });
+}
+
+function profileOpen() {
+  let html = "";
+  html += `<div class="title">Profile</div>`;
+  html += `<form class = "prof-form">`;
+  Object.keys(thisOrg).forEach((key) => {
+    if (key !== "id") {
+      html += `
+                    <label class = "prof-label" for="${key}">${formatKey(
+        key
+      )}:</label>
+                    <div class = "area-and-edit">
+                    <input class = "prof-textarea" type="text" id="${key}" name="${key}" value="${
+        thisOrg[key]
+      }" readonly>
+                    <button type="button" class="edit-btn"><img src="../media/edit icon.png" alt="Logo" /> Edit</button>
+                    </div>
+                `;
+    }
+  });
+  html += `</form>`;
+  document.getElementById("postsarea").innerHTML = html;
+
+  function formatKey(key) {
+    const keyMap = {
+      id: "ID",
+      firstName: "First Name",
+      lastName: "Last Name ",
+      gender: "Gender",
+      email: "Email",
+      password: "Password",
+      contactNumber: "Contact Number",
+      organizationName: "Organization Name",
+      organizationType: "Organization Type",
+      organizationAddress: "Organization Address",
+      organizationArea: "Organization Area",
+      organizationGovernorate: "Organization Governorate",
+
+      documents: "Documents",
+    };
+
+    return keyMap[key] || key; // Return the mapped key name, or the key itself if not found
+  }
+
+  const editButtons = document.querySelectorAll(".edit-btn");
+  editButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const input = button.previousElementSibling;
+      input.readOnly = !input.readOnly;
+      input.focus();
+      button.innerHTML = input.readOnly
+        ? `<img src="../media/edit icon.png" alt="Logo" /> Edit`
+        : `Save`;
+    });
+  });
+}
 
 let selectedFiles = [];
 

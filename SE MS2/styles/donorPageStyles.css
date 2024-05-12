@@ -52,24 +52,30 @@ button {
 }
 
 .title-div {
-  width: 80%;
+  width: 48%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
   font-size: 3em;
   color: white;
+  margin-right: 13%;
 }
 
 .account-div {
-  width: 10%;
+  width: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1.5vw;
+}
+
+.account-div label {
+  color: white;
 }
 
 .account-button {
-  height: 60%;
-  width: 45%;
+  height: 67%;
+  width: 18%;
   background-color: #00cab6;
   font-size: 2em;
   border-radius: 50%;
@@ -412,4 +418,32 @@ h2 {
   color: white;
   font-weight: bold;
   font-size: 1.3em;
+}
+
+.options-box {
+  position: absolute;
+  top: 13vh;
+  right: 22vh;
+  background-color: #ac86da;
+  border: 1px solid #ccc;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 999;
+  padding: 1vh;
+  height: 20vh;
+  width: 7vw;
+  border-radius: 20px;
+}
+
+.options-box a {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.options-box a:hover {
+  text-decoration: underline;
 }

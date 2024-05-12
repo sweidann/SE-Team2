@@ -9,6 +9,7 @@
       type="text/css"
       href="../styles/donorPageStyles.css"
     />
+    <link rel="stylesheet" type="text/css" href="./donorOrg.css" />
   </head>
   <body>
     <div class="upper">
@@ -19,40 +20,20 @@
           </div>
           <div class="title-div">Donations</div>
           <div class="account-div">
-            <label for="">Organizations</label>
-            <label for="">Delivery</label>
             <button class="account-button">N</button>
             <div class="options-box">
-              <a class="acc-button">Account</a>
-              <a class="logout-btn">Logout</a>
+              <div class="acc-button">Account</div>
+              <div class="delv-button">Delivery</div>
+              <div class="logout-btn">Logout</div>
             </div>
           </div>
         </div>
-        <div class="categories-div">
-          <div class="single-cat-div" id="clothes-cat-div">
-            <img class="cat-img" src="../media/clothes icon.png" alt="" />
-            Clothes
-          </div>
-          <div class="single-cat-div" id="toys-cat-div">
-            <img class="cat-img" src="../media/toys icon.png" alt="" />
-            Toys
-          </div>
-          <div class="single-cat-div" id="food-cat-div">
-            <img class="cat-img" src="../media/food-icon.png" alt="" />
-            Food
-          </div>
-          <div class="single-cat-div" id="med-cat-div">
-            <img class="cat-img" src="../media/med icon.png" alt="" />
-            Medical Supplies
-          </div>
-          <div class="single-cat-div" id="school-cat-div">
-            <img class="cat-img" src="../media/school icon.png" alt="" />
-            School Supplies
-          </div>
-          <div class="single-cat-div" id="blood-cat-div">
-            <img class="cat-img" src="../media/blood icon.png" alt="" />
-            Blood Donations
-          </div>
+        <div class="search-div">
+          <input class="search-bar" type="text" placeholder="Search" />
+
+          <button class="search-button">
+            <img class="search-icon" src="../media/search icon.png" />
+          </button>
         </div>
       </div>
     </div>
@@ -106,6 +87,6 @@
         <div class="posts-part-div"></div>
       </div>
     </div>
-    <script type="module" src="donor.js"></script>
+    <script type="module" src="donorDelv.js"></script>
   </body>
 </html>

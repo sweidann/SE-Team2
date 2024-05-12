@@ -1,3 +1,8 @@
+export const adminAccount = {
+  username: "adminUser",
+  password: "adminpass",
+};
+
 export const organizationAccounts = [
   {
     id: "1",
@@ -25,7 +30,8 @@ export const organizationAccounts = [
 
 export const donorsAccounts = [
   {
-    type: "Volunteer",
+    id: "1",
+    type: "Doctor",
     firstName: "Omar",
     lastName: "Ali",
     gender: "male",
@@ -35,16 +41,41 @@ export const donorsAccounts = [
     area: "New Cairo",
     governorate: "Cairo",
   },
-  
 ];
-export const  requestTeacher=[];
-export const requestDoctor=[];
-export const currentDonor={type: "Doctor",
-firstName: "Omar",
-lastName: "Ali",
-gender: "male",
-email: "omarali@gmail.com",
-contactNumber: "12345",
-password: "Omar123",
-area: "New Cairo",
-governorate: "Cairo",}
+export const requestTeacher = [];
+export const requestDoctor = [];
+
+export const currentDonor = {
+  type: "Doctor",
+  firstName: "Omar",
+  lastName: "Ali",
+  gender: "male",
+  email: "omarali@gmail.com",
+  contactNumber: "12345",
+  password: "Omar123",
+  area: "New Cairo",
+  governorate: "Cairo",
+};
+
+export const currentOrgRep = {
+  id: "1",
+  firstName: "Ahmed",
+  lastName: "Ali",
+  gender: "male",
+  email: "ahmedali@gmail.com",
+  password: "Ahmed123",
+  contactNumber: "12345",
+  organizationName: "57357",
+  organizationType: "hospital",
+  organizationAddress: "5th Settlement",
+  organizationArea: "New Cairo",
+  organizationGovernorate: "Cairo",
+
+  documents: {
+    employementContract: "",
+    idBadge: "",
+    incorporationCertificate: "",
+    taxCertificate: "",
+    businessLicense: "",
+  },
+};

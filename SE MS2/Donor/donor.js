@@ -1407,3 +1407,17 @@ document.querySelectorAll(".single-cat-div").forEach((div) => {
     }
   });
 });
+
+function accountButton() {
+  document
+    .querySelector(".account-button")
+    .addEventListener("click", function () {
+      if (this.nextElementSibling.style.display === "flex")
+        this.nextElementSibling.style.display = "none";
+      else {
+        this.nextElementSibling.style.display = "flex";
+      }
+    });
+}
+
+accountButton();
