@@ -17,7 +17,7 @@ document
     console.log(adminAccount.username);
     if (user) {
       setTimeout(() => {
-        window.location.href = "./adminMain.html";
+        window.location.href = "./adminNew.html";
       }, 1000);
     } else {
       alert("Login failed: Invalid username or password.");

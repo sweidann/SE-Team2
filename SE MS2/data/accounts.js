@@ -76,7 +76,8 @@ export const currentDonor = {
   area: "New Cairo",
   governorate: "Cairo",
 };
-export const currentUser={
+
+export const currentUser = {
   type: "Doctor",
   firstName: "Omar",
   lastName: "Ali",
@@ -86,4 +87,4 @@ export const currentUser={
   password: "Omar123",
   area: "New Cairo",
   governorate: "Cairo",
-}
+};

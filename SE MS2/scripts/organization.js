@@ -777,6 +777,89 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
         postNowButtons();
         break;
+      case "Teaching":
+        content.innerHTML = `
+          <div class = "inside-pop-up">
+          <textarea
+          placeholder="Subject"
+          id="Patientname"
+          
+        ></textarea>
+        
+      <textarea
+          placeholder="Number of Students"
+          id="hospitalName"
+          
+        ></textarea>
+        <textarea
+          placeholder="Address"
+          id="hospitalArea"
+          
+        ></textarea>
+  
+          <div class="post-now-button" id="postnow">
+            <button>Post</button>
+          </div>
+          `;
+        postNowButtons();
+        break;
+      case "Medical":
+        content.innerHTML = `
+          <div class = "inside-pop-up">
+          <textarea
+          placeholder="Specialty"
+          id="Patientname"
+          
+        ></textarea>
+        
+      <textarea
+          placeholder="Name of Patient"
+          id="hospitalName"
+          
+        ></textarea>
+        <textarea
+          placeholder="Age"
+          id="hospitalArea"
+          
+        ></textarea>
+
+        <select id="gender" required>
+          <option value="" disabled selected>Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Unisex">Unisex</option>
+        </select>
+
+        <textarea
+          placeholder="Weight"
+          id="hospitalArea"
+          
+        ></textarea>
+
+        <textarea
+          placeholder="Area"
+          id="hospitalArea"
+          
+        ></textarea>
+
+        <textarea
+          placeholder="Governate"
+          id="hospitalArea"
+          
+        ></textarea>
+
+        <textarea
+          placeholder="Description"
+          id="hospitalArea"
+          
+        ></textarea>
+  
+          <div class="post-now-button" id="postnow">
+            <button>Post</button>
+          </div>
+          `;
+        postNowButtons();
+        break;
       default:
         break;
     }
