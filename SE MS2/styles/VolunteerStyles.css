@@ -1,133 +1,128 @@
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-    position: relative;
-  }
-  
-  .left-part, .right-part {
-    flex: 1; /* Both divs take up equal space */
-    height: 100%;
-  }
-  
-  .left-part {
-    background-color: #8e65c0; /* Left div background color */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  position: relative;
+}
 
+.left-part,
+.right-part {
+  flex: 1; /* Both divs take up equal space */
+  height: 100%;
+}
 
-  .back-button{
-    position: absolute; /* Position the button absolutely */
-    top: 20px; /* Adjust the distance from the top */
-    left: 50px;
-    height: 50px;
-    width: 50px;
-    font-size: 10px;
-    border-radius: 50px;
-    background-color: #00cab6;
-    border: none;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
-    color: aliceblue;
-    left: 0%;
-   cursor: pointer;
-  }
-  .back-button:hover {
-    scale: 1.1;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-  }
-  .teacher-img{
-    height: 60vh;
-    width:550px;
-    top:70%;
-    
-  }
-  .teacher-button{
-    top:90%;
-    height: 100px;
-    width: 300px;
-    font-size: 20px;
-    border-radius: 50px;
-    background-color: #00cab6;
-    border: none;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
-    color: aliceblue;
-    cursor: pointer;
-  }
-  .teacher-button:hover {
-    scale: 1.1;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-  }
-  .right-part {
-    background-color: #ac86da; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .border-textbox {
-    position: absolute;
-    width: 0px; /* Width of the border */
-    height: 100%; /* Height of the container */
-    top: 0;
-    left: 50%; /* Place the textbox in the middle */
-    background-color: #000; /* Color of the border */
-    transform: translateX(-50%); /* Center the textbox horizontally */
-    border: none; /* Remove default border */
-    pointer-events: none; /* Prevent clicking on the textbox */
-  }
-  .textbox-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Ensure the textbox is above the divs */
-    background-color: #8e65c0;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    padding: 0px;
+.left-part {
+  background-color: #8e65c0; /* Left div background color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.back-button {
+  position: absolute; /* Position the button absolutely */
+  top: 20px; /* Adjust the distance from the top */
+  left: 30px;
+  height: 50px;
+  width: 50px;
+  font-size: 10px;
+  border-radius: 50px;
+  background-color: #00cab6;
+  border: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  color: aliceblue;
+  cursor: pointer;
+}
+.back-button:hover {
+  scale: 1.1;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+.teacher-img {
+  height: 60vh;
+  width: 550px;
+  top: 70%;
+}
+.teacher-button {
+  top: 90%;
+  height: 100px;
+  width: 300px;
+  font-size: 20px;
+  border-radius: 50px;
+  background-color: #00cab6;
+  border: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  color: aliceblue;
+  cursor: pointer;
+}
+.teacher-button:hover {
+  scale: 1.1;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+.right-part {
+  background-color: #ac86da;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.border-textbox {
+  position: absolute;
+  width: 0px; /* Width of the border */
+  height: 100%; /* Height of the container */
+  top: 0;
+  left: 50%; /* Place the textbox in the middle */
+  background-color: #000; /* Color of the border */
+  transform: translateX(-50%); /* Center the textbox horizontally */
+  border: none; /* Remove default border */
+  pointer-events: none; /* Prevent clicking on the textbox */
+}
+.textbox-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Ensure the textbox is above the divs */
+  background-color: #8e65c0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 0px;
 }
 
 .textbox {
-    width: 250px;
-    height:100px;
-    border: none;
-    font-size: 28px;
-    text-align: center;
-    color:#fcfbfc;
-    background-color: #8e65c0;
+  width: 250px;
+  height: 100px;
+  border: none;
+  font-size: 28px;
+  text-align: center;
+  color: #fcfbfc;
+  background-color: #8e65c0;
 }
-.doctor-img{
-    height: 50vh;
-    width:400px;
-    margin-top:10%;
-   
-
- 
-  }
-  .doctor-button{
-    top:90%;
-    height: 100px;
-    width: 300px;
-    font-size: 20px;
-    border-radius: 50px;
-    background-color: #00cab6;
-    border: none;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
-    color: aliceblue;
-    margin-top: 20px;
-    margin-bottom: 4px;
-    cursor: pointer;
-  }
-  .doctor-button:hover {
-    scale: 1.1;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-  }
+.doctor-img {
+  height: 50vh;
+  width: 400px;
+  margin-top: 10%;
+}
+.doctor-button {
+  top: 90%;
+  height: 100px;
+  width: 300px;
+  font-size: 20px;
+  border-radius: 50px;
+  background-color: #00cab6;
+  border: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  color: aliceblue;
+  margin-top: 20px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+.doctor-button:hover {
+  scale: 1.1;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}

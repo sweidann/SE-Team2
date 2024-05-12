@@ -1,0 +1,80 @@
+body {
+  margin: 0px;
+  background-color: #8e65c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .middle {
+  height: 100vh;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+} */
+
+form {
+  margin-top: 5vh;
+  height: 90vh;
+  background-color: #ac86da;
+  width: 40vw;
+  border-radius: 20px;
+  padding-left: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 2.5vh;
+}
+
+.title-signup {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: white;
+}
+
+.area-and-edit {
+  color: white;
+}
+
+.prof-textarea {
+  color: gray;
+}
+
+.submit-time {
+  height: 5vh;
+  width: 7vw;
+  background-color: #00cab6;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  font-size: 1.5em;
+}
+
+.submit-div {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button {
+  position: absolute; /* Position the button absolutely */
+  top: 20px; /* Adjust the distance from the top */
+  left: 30px;
+  height: 50px;
+  width: 50px;
+  font-size: 10px;
+  border-radius: 50px;
+  background-color: #00cab6;
+  border: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  color: aliceblue;
+  cursor: pointer;
+}

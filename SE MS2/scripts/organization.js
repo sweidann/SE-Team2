@@ -1025,7 +1025,6 @@ function profileOpen() {
       organizationAddress: "Organization Address",
       organizationArea: "Organization Area",
       organizationGovernorate: "Organization Governorate",
-
       documents: "Documents",
     };
 
